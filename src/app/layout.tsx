@@ -1,7 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Manrope, Inter, DM_Sans } from "next/font/google";
 import "./globals.css";
 import SiteShell from "@/components/SiteShell";
+
+export const viewport: Viewport = {
+  themeColor: "#013e37",
+  width: "device-width",
+  initialScale: 1,
+};
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -38,6 +44,19 @@ export const metadata: Metadata = {
     "Venture Scale",
   ],
   authors: [{ name: "Entrepreneurs Business School" }],
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "Entrepreneurs Business School (EBS) | Official Institutional Platform",
     description: "Developing the founders of tomorrow. Think Bigger. Build Bigger. Progressive venture education in alliance with 3G and Mission Malappuram 2050.",
