@@ -26,7 +26,7 @@ export default function NewsPage() {
       type: "Upcoming Academic Summit",
       date: "November 28, 2025",
       location: "Academic Hall & Global Broadcast",
-      title: "Mission Malappuram 2050 Venture Summit",
+      title: "Mission Malayalapuram 2050 Venture Summit",
       desc: "Global venture partners, sovereign wealth delegators, and academic mentors gather to preview high-trajectory projects graduating from the EBS Scale & Master Fellowship tracks.",
       image: "/assets/summit.jpg",
       cta: "Request Observer Pass",
@@ -38,7 +38,7 @@ export default function NewsPage() {
       date: "Vol. IX • Q3 2025",
       location: "EBS Academic Press",
       title: "Unit Economics of Emerging Tier-2 Hubs",
-      desc: "Empirical field analysis dissecting sustainable CAC-to-LTV multipliers in decentralised industrial districts under Mission Malappuram 2050 framework.",
+      desc: "Empirical field analysis dissecting sustainable CAC-to-LTV multipliers in decentralised industrial districts under Mission Malayalapuram 2050 framework.",
       image: "/assets/campus.jpg",
       cta: "Download Monograph PDF",
       action: () => alert("Downloading Monograph Vol. IX: Unit Economics of Emerging Tier-2 Hubs..."),
@@ -80,7 +80,7 @@ export default function NewsPage() {
       category: "research",
       type: "Policy Whitepaper",
       date: "Vol. X • Q4 2025",
-      location: "3G Alliance Policy Secretariat",
+      location: "3G IRPS Policy Secretariat",
       title: "Cross-Border Industrial Corridors & Diaspora Capital Syndication",
       desc: "A framework for structuring non-resident angel investment SPVs in compliant industrial clusters across South Asia and the GCC.",
       image: "/assets/campus.jpg",
@@ -111,7 +111,7 @@ export default function NewsPage() {
           </h1>
 
           <p className="font-inter text-base text-[#9cd1c7] max-w-2xl">
-            Thought leadership, venture scaling playbooks, upcoming academic summits, and announcements from the Entrepreneurs Business School and 3G Alliance.
+            Thought leadership, venture scaling playbooks, upcoming academic summits, and announcements from the Entrepreneur Business School and 3G IRPS.
           </p>
         </div>
       </section>

@@ -22,7 +22,7 @@ const STAGES = [
 ];
 
 export default function PageLoader({
-  label = "Entrepreneurs Business School",
+  label = "Entrepreneur Business School",
   fullscreen = true,
   initialVariant = "aura",
   allowVariantSwitch = true,
@@ -163,7 +163,7 @@ export default function PageLoader({
         >
           <Image
             src="/assets/ebs-shield-crest.png"
-            alt="Entrepreneurs Business School Crest"
+            alt="Entrepreneur Business School Crest"
             width={288}
             height={309}
             priority
@@ -199,7 +199,7 @@ export default function PageLoader({
           {label}
         </h2>
         <p className="font-dm-sans text-[9px] tracking-[0.2em] text-[#695e2f] uppercase font-semibold mt-1">
-          In Alliance with 3G & Mission 2050
+          In Alliance with 3G IRPS & Mission Malayalapuram 2050
         </p>
       </motion.div>
 
@@ -265,7 +265,7 @@ export default function PageLoader({
         >
           <Image
             src="/assets/ebs-shield-crest.png"
-            alt="Entrepreneurs Business School Crest"
+            alt="Entrepreneur Business School Crest"
             width={288}
             height={309}
             priority
@@ -403,7 +403,7 @@ export default function PageLoader({
         >
           <Image
             src="/assets/ebs-shield-crest.png"
-            alt="Entrepreneurs Business School Crest"
+            alt="Entrepreneur Business School Crest"
             width={288}
             height={309}
             priority
@@ -420,7 +420,7 @@ export default function PageLoader({
         <div className="flex items-center justify-center gap-2 mt-1">
           <span className="w-1 h-1 rounded-full bg-[#695e2f]" />
           <span className="font-dm-sans text-[10px] tracking-[0.18em] text-[#695e2f] uppercase font-semibold">
-            In Alliance with 3G & Mission 2050
+            In Alliance with 3G IRPS & Mission Malayalapuram 2050
           </span>
           <span className="w-1 h-1 rounded-full bg-[#695e2f]" />
         </div>
@@ -536,11 +536,11 @@ export default function PageLoader({
               isObsidian ? "text-[#ffefb3]/70" : "text-[#002622]/60"
             }`}
           >
-            <span>3G ALLIANCE</span>
+            <span>3G IRPS</span>
             <span className={isObsidian ? "text-[#ffefb3]/30" : "text-[#013e37]/30"}>
               •
             </span>
-            <span>MALAPPURAM ECOSYSTEM</span>
+            <span>MALAYALAPURAM ECOSYSTEM</span>
           </div>
         </div>
       )}

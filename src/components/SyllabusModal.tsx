@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Download, CheckCircle2, BookOpen, Clock, Award, Layers } from "lucide-react";
+import { downloadSyllabusPdf } from "@/lib/generateSyllabusPdf";
 
 interface SyllabusModalProps {
   isOpen: boolean;
@@ -16,6 +17,12 @@ export default function SyllabusModal({
   programmeName,
 }: SyllabusModalProps) {
   const [downloaded, setDownloaded] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setDownloaded(false);
+    }
+  }, [isOpen, programmeName]);
 
   const getSyllabusDetails = (name: string) => {
     switch (name) {
@@ -91,18 +98,10 @@ export default function SyllabusModal({
 
   const handleDownload = () => {
     setDownloaded(true);
+    downloadSyllabusPdf(programmeName, details);
     setTimeout(() => {
-      // Simulate file download
-      const element = document.createElement("a");
-      const file = new Blob([
-        `ENTREPRENEURS BUSINESS SCHOOL (EBS)\nSyllabus Monograph: ${programmeName}\nDuration: ${details.duration}\nLevel: ${details.level}\n\nOutcome Deliverable:\n${details.deliverable}\n\nModules:\n${details.modules.map((m, i) => `${i + 1}. ${m.title}\n   ${m.desc}`).join("\n\n")}\n\nIn Alliance with 3G & Mission Malappuram 2050\nOfficial Registry: registrar@ebs-institution.org`
-      ], { type: "text/plain" });
-      element.href = URL.createObjectURL(file);
-      element.download = `EBS_${programmeName.replace(/\s+/g, "_")}_Syllabus_2025.txt`;
-      document.body.appendChild(element);
-      element.click();
-      document.body.removeChild(element);
-    }, 400);
+      setDownloaded(false);
+    }, 3500);
   };
 
   return (

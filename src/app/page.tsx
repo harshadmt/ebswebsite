@@ -65,7 +65,7 @@ export default function HomePage() {
           >
             <span className="w-2 h-2 rounded-full bg-[#ffefb3] animate-pulse" />
             <span className="font-dm-sans text-xs font-bold uppercase tracking-wider text-[#ffefb3]">
-              Associated with 3G & Mission Malappuram 2050
+              Associated with 3G IRPS & Mission Malayalapuram 2050
             </span>
           </motion.div>
 
@@ -124,7 +124,7 @@ export default function HomePage() {
                 <div className="relative h-[420px] w-full">
                   <Image
                     src="/assets/amphitheatre.jpg"
-                    alt="Executive Amphitheatre at Entrepreneurs Business School"
+                    alt="Executive Amphitheatre at Entrepreneur Business School"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -588,7 +588,7 @@ export default function HomePage() {
                   Target Profile & Outcome
                 </span>
                 <p className="leading-relaxed">
-                  For elite entrepreneurs aiming for sovereign-scale systemic impact. Full integration with Mission Malappuram 2050 anchor infrastructure projects.
+                  For elite entrepreneurs aiming for sovereign-scale systemic impact. Full integration with Mission Malayalapuram 2050 anchor infrastructure projects.
                 </p>
               </div>
               <div className="lg:col-span-3 flex lg:justify-end gap-2 relative z-10">
@@ -918,7 +918,7 @@ export default function HomePage() {
                 <div className="relative h-60 w-full">
                   <Image
                     src="/assets/summit.jpg"
-                    alt="Mission Malappuram 2050 Venture Summit Auditorium"
+                    alt="Mission Malayalapuram 2050 Venture Summit Auditorium"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
@@ -932,7 +932,7 @@ export default function HomePage() {
                     November 28, 2025 • Academic Hall & Global Broadcast
                   </span>
                   <h3 className="font-manrope text-xl font-bold text-[#002622] mb-3">
-                    Mission Malappuram 2050 Venture Summit
+                    Mission Malayalapuram 2050 Venture Summit
                   </h3>
                   <p className="font-inter text-xs text-[#404946] leading-relaxed">
                     Global venture partners, sovereign wealth delegators, and academic mentors gather to preview high-trajectory projects graduating from the EBS Scale & Master Fellowship tracks.
@@ -969,7 +969,7 @@ export default function HomePage() {
                     Unit Economics of Emerging Tier-2 Hubs
                   </h4>
                   <p className="font-inter text-xs text-[#404946] max-w-lg leading-relaxed">
-                    Empirical field analysis dissecting sustainable CAC-to-LTV multipliers in decentralised industrial districts under Mission Malappuram 2050 framework.
+                    Empirical field analysis dissecting sustainable CAC-to-LTV multipliers in decentralised industrial districts under Mission Malayalapuram 2050 framework.
                   </p>
                 </div>
                 <Link
@@ -1043,7 +1043,7 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================= */}
-      {/* 8. ABOUT EBS & MISSION MALAPPURAM 2050 */}
+      {/* 8. ABOUT EBS & MISSION MALAYALAPURAM 2050 */}
       {/* ========================================================= */}
       <section className="w-full py-24 bg-[#f1fcf8]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
@@ -1057,7 +1057,7 @@ export default function HomePage() {
                 Developing the Founders of Tomorrow.
               </h2>
               <p className="font-inter text-base text-[#404946] leading-relaxed">
-                Entrepreneurs Business School (EBS) was conceived not merely as an educational apparatus, but as an institutional catalyst. In strategic alliance with 3G and the civic transformation charter of <strong className="text-[#002622]">Mission Malappuram 2050</strong>, EBS operates as a high-density venture incubator designed to transform regional potential into sovereign economic prowess.
+                Entrepreneur Business School (EBS) was conceived not merely as an educational apparatus, but as an institutional catalyst. In strategic alliance with 3G IRPS and the civic transformation charter of <strong className="text-[#002622]">Mission Malayalapuram 2050</strong>, EBS operates as a high-density venture incubator designed to transform regional potential into sovereign economic prowess.
               </p>
               <p className="font-inter text-sm text-[#404946] leading-relaxed">
                 By connecting local founders with global capital channels, elite operating playbooks, and tier-one academic discipline, we ensure that generational enterprises take root in regional centers and scale into world-renowned conglomerates.
@@ -1073,7 +1073,7 @@ export default function HomePage() {
                   <span className="font-dm-sans text-[11px] uppercase text-[#695e2f] font-bold">Founders Tracked</span>
                 </div>
                 <div className="p-4 bg-[#ebf6f2] rounded-xl border border-[#013e37]/10">
-                  <span className="font-manrope text-2xl lg:text-3xl font-bold text-[#002622] block">3G</span>
+                  <span className="font-manrope text-2xl lg:text-3xl font-bold text-[#002622] block">3G IRPS</span>
                   <span className="font-dm-sans text-[11px] uppercase text-[#695e2f] font-bold">Global Alliance</span>
                 </div>
               </div>

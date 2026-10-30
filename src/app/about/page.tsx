@@ -44,7 +44,7 @@ export default function AboutPage() {
             </h1>
 
             <p className="font-inter text-base sm:text-lg text-[#9cd1c7] max-w-2xl leading-relaxed">
-              Entrepreneurs Business School (EBS) was founded on a simple conviction: theoretical business administration cannot forge sovereign founders. We build enduring companies through real venture practice, global mentor networks, and civic alignment.
+              Entrepreneur Business School (EBS) was founded on a simple conviction: theoretical business administration cannot forge sovereign founders. We build enduring companies through real venture practice, global mentor networks, and civic alignment.
             </p>
           </div>
 
@@ -53,10 +53,10 @@ export default function AboutPage() {
               Alliance Anchor
             </span>
             <h3 className="font-manrope text-xl font-bold text-white mb-2">
-              Mission Malappuram 2050
+              Mission Malayalapuram 2050
             </h3>
             <p className="font-inter text-xs text-[#9cd1c7] leading-relaxed">
-              In alliance with 3G and the regional civic transformation charter of Mission Malappuram 2050, EBS serves as the venture incubation engine to catalyze high-growth industries and generational prosperity.
+              In alliance with 3G IRPS and the regional civic transformation charter of Mission Malayalapuram 2050, EBS serves as the venture incubation engine to catalyze high-growth industries and generational prosperity.
             </p>
           </div>
         </div>
@@ -118,7 +118,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission Malappuram 2050 Deep Dive */}
+      {/* Mission Malayalapuram 2050 Deep Dive */}
       <section className="py-24 px-4 sm:px-6 lg:px-12 bg-[#ebf6f2] border-t border-[#013e37]/10">
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 flex flex-col gap-6">
@@ -126,13 +126,13 @@ export default function AboutPage() {
               Civic Transformation Charter
             </span>
             <h2 className="font-manrope text-3xl sm:text-4xl lg:text-5xl font-bold text-[#002622] tracking-tight">
-              Mission Malappuram 2050: The Generational Vision
+              Mission Malayalapuram 2050: The Generational Vision
             </h2>
             <p className="font-inter text-sm md:text-base text-[#404946] leading-relaxed">
-              Mission Malappuram 2050 is a multi-decade civic and economic modernization blueprint designed to position the Malabar corridor as an international innovation and industrial powerhouse.
+              Mission Malayalapuram 2050 is a multi-decade civic and economic modernization blueprint designed to position the Malabar corridor as an international innovation and industrial powerhouse.
             </p>
             <p className="font-inter text-sm text-[#404946] leading-relaxed">
-              Through strategic alliances with 3G and global diaspora capital, EBS serves as the venture crucible—training 1,000+ local founders to build globally competitive, export-oriented companies rooted in regional soil.
+              Through strategic alliances with 3G IRPS and global diaspora capital, EBS serves as the venture crucible—training 1,000+ local founders to build globally competitive, export-oriented companies rooted in regional soil.
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-2">

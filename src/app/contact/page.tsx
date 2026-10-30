@@ -56,7 +56,7 @@ export default function ContactPage() {
           </h1>
 
           <p className="font-inter text-base text-[#9cd1c7] max-w-2xl">
-            Inquiries regarding fellowship admissions, research monographs, partner syndicates, or Mission Malappuram 2050 testbed access.
+            Inquiries regarding fellowship admissions, research monographs, partner syndicates, or Mission Malayalapuram 2050 testbed access.
           </p>
         </div>
       </section>
@@ -74,7 +74,7 @@ export default function ContactPage() {
                 Admissions & Registry Office
               </h2>
               <p className="font-inter text-sm text-[#404946] mt-3 leading-relaxed">
-                Our central registry coordinates admissions across India, the GCC, and international diaspora hubs in alliance with 3G.
+                Our central registry coordinates admissions across India, the GCC, and international diaspora hubs in alliance with 3G IRPS.
               </p>
             </div>
 
@@ -86,7 +86,7 @@ export default function ContactPage() {
                     Campus Address
                   </h4>
                   <p className="font-inter text-xs text-[#404946] mt-1 leading-relaxed">
-                    Entrepreneurs Business School (EBS)<br />
+                    Entrepreneur Business School (EBS)<br />
                     Venture Innovation Corridor, Malappuram<br />
                     Kerala, India - 676505
                   </p>
@@ -219,7 +219,7 @@ export default function ContactPage() {
                     >
                       <option value="admissions">Fellowship Admissions & EPA</option>
                       <option value="curriculum">Programme Curriculum Question</option>
-                      <option value="partnership">3G / Mission 2050 Partnership</option>
+                      <option value="partnership">3G IRPS / Mission Malayalapuram 2050 Partnership</option>
                       <option value="media">Media & Monograph Inquiry</option>
                       <option value="other">General Registry Support</option>
                     </select>

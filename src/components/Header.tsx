@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import { 
   ChevronDown, 
   Menu, 
@@ -42,7 +42,7 @@ export default function Header({ onOpenApply }: HeaderProps) {
   const navLinks = [
     { name: "Home", href: "/" },
     { 
-      name: "Programmes", 
+      name: "Courses", 
       href: "/programmes",
       hasDropdown: true,
       dropdownItems: [
@@ -90,6 +90,22 @@ export default function Header({ onOpenApply }: HeaderProps) {
     { name: "Contact", href: "/contact" },
   ];
 
+  const getActiveNavName = (currentPath: string) => {
+    if (currentPath === "/") return "Home";
+    if (currentPath.startsWith("/programmes")) return "Courses";
+    if (currentPath.startsWith("/epa")) return "EPA Diagnostic";
+    if (currentPath.startsWith("/about")) return "About Us";
+    if (currentPath.startsWith("/news")) return "News & Events";
+    if (currentPath.startsWith("/contact")) return "Contact";
+    return "Home";
+  };
+
+  const [activeNav, setActiveNav] = useState<string>(() => getActiveNavName(pathname));
+
+  useEffect(() => {
+    setActiveNav(getActiveNavName(pathname));
+  }, [pathname]);
+
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
     return pathname.startsWith(href);
@@ -107,11 +123,19 @@ export default function Header({ onOpenApply }: HeaderProps) {
         <div className="absolute inset-x-8 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/90 to-transparent pointer-events-none rounded-t-full" />
 
         {/* 1. Left: Official Brand Identity */}
-        <Link href="/" className="flex items-center gap-3.5 group shrink-0" aria-label="Entrepreneurs Business School Home">
+        <Link
+          href="/"
+          onClick={() => {
+            setActiveNav("Home");
+            setHoveredNav(null);
+          }}
+          className="flex items-center gap-3.5 group shrink-0"
+          aria-label="Entrepreneur Business School Home"
+        >
           <div className="relative h-7 sm:h-8 md:h-9 w-auto flex items-center">
             <Image
-              src="/assets/ebs-official-logo.png"
-              alt="Entrepreneurs Business School"
+              src="/assets/ebs-logo.png"
+              alt="Entrepreneur Business School"
               width={1795}
               height={309}
               priority
@@ -122,182 +146,241 @@ export default function Header({ onOpenApply }: HeaderProps) {
           <div className="hidden 2xl:flex items-center gap-2 pl-3 border-l border-[#013e37]/15">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 inline-block animate-pulse shrink-0" />
             <span className="font-dm-sans text-[10px] uppercase tracking-wider text-[#695e2f] font-bold whitespace-nowrap">
-              In Alliance with 3G & Mission 2050
+              In Alliance with 3G IRPS & Mission Malayalapuram 2050
             </span>
           </div>
         </Link>
 
         {/* 2. Center: Floating Frosted Navigation Dock */}
-        <nav className="hidden xl:flex items-center gap-0.5 bg-[#002622]/[0.03] p-1 rounded-full border border-[#002622]/[0.05]">
-          {navLinks.map((link) => {
-            const active = isActive(link.href);
+        <LayoutGroup id="header-nav-dock">
+          <nav
+            onMouseLeave={() => setHoveredNav(null)}
+            className="hidden xl:flex items-center gap-0.5 bg-[#002622]/[0.03] p-1 rounded-full border border-[#002622]/[0.05]"
+          >
+            {navLinks.map((link) => {
+              const isSelected = activeNav === link.name;
 
-            if (link.hasDropdown) {
-              return (
-                <div
-                  key={link.name}
-                  className="relative"
-                  onMouseEnter={() => {
-                    setProgrammesDropdown(true);
-                    setHoveredNav(link.name);
-                  }}
-                  onMouseLeave={() => {
-                    setProgrammesDropdown(false);
-                    setHoveredNav(null);
-                  }}
-                >
-                  <Link
-                    href={link.href}
-                    className={`relative px-3.5 py-1.5 font-dm-sans text-[13px] font-semibold rounded-full transition-colors flex items-center gap-1 z-10 ${
-                      active ? "text-[#002622] font-bold" : "text-[#404946] hover:text-[#002622]"
-                    }`}
+              if (link.hasDropdown) {
+                return (
+                  <div
+                    key={link.name}
+                    className="relative"
+                    onMouseEnter={() => {
+                      setProgrammesDropdown(true);
+                      setHoveredNav(link.name);
+                    }}
+                    onMouseLeave={() => {
+                      setProgrammesDropdown(false);
+                      setHoveredNav(null);
+                    }}
                   >
-                    {/* Animated Sliding Glass Pill Indicator */}
-                    {(active || hoveredNav === link.name) && (
-                      <motion.span
-                        layoutId="nav-glass-pill"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                        className="absolute inset-0 rounded-full bg-white/90 shadow-2xs border border-[#013e37]/10 -z-10"
-                      />
-                    )}
-                    <span
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        setProgrammesDropdown((prev) => !prev);
+                    <Link
+                      href={link.href}
+                      onClick={() => {
+                        setActiveNav(link.name);
+                        setHoveredNav(null);
                       }}
-                      className="cursor-pointer p-0.5 rounded-full hover:bg-black/5 inline-flex items-center"
+                      className={`relative px-3.5 py-1.5 font-dm-sans text-[13px] font-semibold rounded-full transition-colors duration-200 flex items-center gap-1.5 z-10 ${
+                        isSelected ? "text-[#002622] font-bold" : "text-[#404946] hover:text-[#002622]"
+                      }`}
                     >
-                      <ChevronDown
-                        className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                          programmesDropdown ? "rotate-180 text-[#002622]" : "text-[#707976]"
-                        }`}
-                      />
-                    </span>
-                  </Link>
-
-                  {/* Glassmorphic Dropdown Popover */}
-                  <AnimatePresence>
-                    {programmesDropdown && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 12, scale: 0.96 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 8, scale: 0.96 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[410px] z-50 pointer-events-auto"
+                      {/* Animated Sliding Glass Pill Indicator for Active Tab */}
+                      {isSelected && (
+                        <motion.span
+                          layoutId="nav-active-pill"
+                          transition={{
+                            type: "spring",
+                            stiffness: 380,
+                            damping: 30,
+                            mass: 0.8,
+                          }}
+                          className="absolute inset-0 rounded-full bg-white/95 shadow-2xs border border-[#013e37]/10 -z-10"
+                        />
+                      )}
+                      {/* Subtle Gliding Hover Highlight for Inactive Tabs */}
+                      {hoveredNav === link.name && !isSelected && (
+                        <motion.span
+                          layoutId="nav-hover-pill"
+                          transition={{
+                            type: "spring",
+                            stiffness: 450,
+                            damping: 35,
+                          }}
+                          className="absolute inset-0 rounded-full bg-[#002622]/[0.05] -z-10"
+                        />
+                      )}
+                      <span className="relative z-10">{link.name}</span>
+                      <span
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setProgrammesDropdown((prev) => !prev);
+                        }}
+                        className="cursor-pointer p-0.5 rounded-full hover:bg-black/5 inline-flex items-center relative z-10"
                       >
-                        <div className="glass-popover rounded-3xl p-3 shadow-2xl">
-                          {/* Popover Header */}
-                          <div className="flex items-center justify-between px-3 py-2 border-b border-[#013e37]/8 mb-1.5">
-                            <span className="font-dm-sans text-[11px] font-bold text-[#695e2f] uppercase tracking-wider flex items-center gap-1.5">
-                              <Layers className="w-3.5 h-3.5 text-[#695e2f]" />
-                              5-Stage Academic Progression
-                            </span>
-                            <span className="text-[10px] font-dm-sans text-[#707976] font-medium">
-                              Full Curriculum
-                            </span>
-                          </div>
+                        <ChevronDown
+                          className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                            programmesDropdown ? "rotate-180 text-[#002622]" : "text-[#707976]"
+                          }`}
+                        />
+                      </span>
+                    </Link>
 
-                          {/* Track Cards */}
-                          <div className="flex flex-col gap-1">
-                            {link.dropdownItems?.map((item) => (
-                              <Link
-                                key={item.title}
-                                href={item.href}
-                                onClick={() => setProgrammesDropdown(false)}
-                                className={`group/track px-3 py-2.5 rounded-2xl transition-all ${
-                                  item.featured
-                                    ? "bg-gradient-to-r from-[#013e37] to-[#002622] text-white shadow-md hover:shadow-lg hover:scale-[1.01]"
-                                    : "hover:bg-[#013e37]/[0.05] text-[#131d1c]"
-                                }`}
-                              >
-                                <div className="flex items-center justify-between">
-                                  <div className="flex items-center gap-2">
-                                    <span
-                                      className={`text-[10px] font-dm-sans font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md ${
-                                        item.featured
-                                          ? "bg-[#ffefb3]/20 text-[#ffefb3]"
-                                          : "bg-[#013e37]/8 text-[#013e37]"
-                                      }`}
-                                    >
-                                      {item.stage}
-                                    </span>
-                                    <span
-                                      className={`font-manrope text-[13px] font-bold leading-tight ${
-                                        item.featured
-                                          ? "text-white"
-                                          : "text-[#002622] group-hover/track:text-[#013e37]"
-                                      }`}
-                                    >
-                                      {item.title}
-                                    </span>
-                                  </div>
-                                  <span
-                                    className={`font-dm-sans text-[11px] font-bold ${
-                                      item.featured ? "text-[#ffefb3]" : "text-[#707976]"
-                                    }`}
-                                  >
-                                    {item.duration}
-                                  </span>
-                                </div>
-                                <p
-                                  className={`font-inter text-[11.5px] mt-1 pl-0.5 leading-snug ${
-                                    item.featured ? "text-[#9cd1c7]" : "text-[#5b6562]"
+                    {/* Glassmorphic Dropdown Popover */}
+                    <AnimatePresence>
+                      {programmesDropdown && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 12, scale: 0.96 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[410px] z-50 pointer-events-auto"
+                        >
+                          <div className="glass-popover rounded-3xl p-3 shadow-2xl">
+                            {/* Popover Header */}
+                            <div className="flex items-center justify-between px-3 py-2 border-b border-[#013e37]/8 mb-1.5">
+                              <span className="font-dm-sans text-[11px] font-bold text-[#695e2f] uppercase tracking-wider flex items-center gap-1.5">
+                                <Layers className="w-3.5 h-3.5 text-[#695e2f]" />
+                                5-Stage Academic Progression
+                              </span>
+                              <span className="text-[10px] font-dm-sans text-[#707976] font-medium">
+                                Full Curriculum
+                              </span>
+                            </div>
+
+                            {/* Track Cards */}
+                            <div className="flex flex-col gap-1">
+                              {link.dropdownItems?.map((item) => (
+                                <Link
+                                  key={item.title}
+                                  href={item.href}
+                                  onClick={() => {
+                                    setActiveNav("Courses");
+                                    setProgrammesDropdown(false);
+                                  }}
+                                  className={`group/track px-3 py-2.5 rounded-2xl transition-all ${
+                                    item.featured
+                                      ? "bg-gradient-to-r from-[#013e37] to-[#002622] text-white shadow-md hover:shadow-lg hover:scale-[1.01]"
+                                      : "hover:bg-[#013e37]/[0.05] text-[#131d1c]"
                                   }`}
                                 >
-                                  {item.desc}
-                                </p>
+                                  <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-2">
+                                      <span
+                                        className={`text-[10px] font-dm-sans font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-md ${
+                                          item.featured
+                                            ? "bg-[#ffefb3]/20 text-[#ffefb3]"
+                                            : "bg-[#013e37]/8 text-[#013e37]"
+                                        }`}
+                                      >
+                                        {item.stage}
+                                      </span>
+                                      <span
+                                        className={`font-manrope text-[13px] font-bold leading-tight ${
+                                          item.featured
+                                            ? "text-white"
+                                            : "text-[#002622] group-hover/track:text-[#013e37]"
+                                        }`}
+                                      >
+                                        {item.title}
+                                      </span>
+                                    </div>
+                                    <span
+                                      className={`font-dm-sans text-[11px] font-bold ${
+                                        item.featured ? "text-[#ffefb3]" : "text-[#707976]"
+                                      }`}
+                                    >
+                                      {item.duration}
+                                    </span>
+                                  </div>
+                                  <p
+                                    className={`font-inter text-[11.5px] mt-1 pl-0.5 leading-snug ${
+                                      item.featured ? "text-[#9cd1c7]" : "text-[#5b6562]"
+                                    }`}
+                                  >
+                                    {item.desc}
+                                  </p>
+                                </Link>
+                              ))}
+                            </div>
+
+                            {/* Popover Footer Link */}
+                            <div className="pt-2 mt-1 border-t border-[#013e37]/8 px-2">
+                              <Link
+                                href="/programmes"
+                                onClick={() => {
+                                  setActiveNav("Courses");
+                                  setProgrammesDropdown(false);
+                                }}
+                                className="w-full flex items-center justify-between px-2.5 py-1.5 rounded-xl text-xs font-dm-sans font-bold text-[#013e37] hover:bg-[#013e37]/5 transition-colors group/foot"
+                              >
+                                <span>Explore Comparative Matrix & Deliverables</span>
+                                <ArrowUpRight className="w-3.5 h-3.5 text-[#013e37] group-hover/foot:translate-x-0.5 group-hover/foot:-translate-y-0.5 transition-transform" />
                               </Link>
-                            ))}
+                            </div>
                           </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
 
-                          {/* Popover Footer Link */}
-                          <div className="pt-2 mt-1 border-t border-[#013e37]/8 px-2">
-                            <Link
-                              href="/programmes"
-                              onClick={() => setProgrammesDropdown(false)}
-                              className="w-full flex items-center justify-between px-2.5 py-1.5 rounded-xl text-xs font-dm-sans font-bold text-[#013e37] hover:bg-[#013e37]/5 transition-colors group/foot"
-                            >
-                              <span>Explore Comparative Matrix & Deliverables</span>
-                              <ArrowUpRight className="w-3.5 h-3.5 text-[#013e37] group-hover/foot:translate-x-0.5 group-hover/foot:-translate-y-0.5 transition-transform" />
-                            </Link>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => {
+                    setActiveNav(link.name);
+                    setHoveredNav(null);
+                  }}
+                  onMouseEnter={() => setHoveredNav(link.name)}
+                  onMouseLeave={() => setHoveredNav(null)}
+                  className={`relative px-3.5 py-1.5 font-dm-sans text-[13px] font-semibold rounded-full transition-colors duration-200 z-10 ${
+                    isSelected ? "text-[#002622] font-bold" : "text-[#404946] hover:text-[#002622]"
+                  }`}
+                >
+                  {/* Animated Sliding Glass Pill Indicator for Active Tab */}
+                  {isSelected && (
+                    <motion.span
+                      layoutId="nav-active-pill"
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                        mass: 0.8,
+                      }}
+                      className="absolute inset-0 rounded-full bg-white/95 shadow-2xs border border-[#013e37]/10 -z-10"
+                    />
+                  )}
+                  {/* Subtle Gliding Hover Highlight for Inactive Tabs */}
+                  {hoveredNav === link.name && !isSelected && (
+                    <motion.span
+                      layoutId="nav-hover-pill"
+                      transition={{
+                        type: "spring",
+                        stiffness: 450,
+                        damping: 35,
+                      }}
+                      className="absolute inset-0 rounded-full bg-[#002622]/[0.05] -z-10"
+                    />
+                  )}
+                  <span className="relative z-10">{link.name}</span>
+                </Link>
               );
-            }
-
-            return (
-              <Link
-                key={link.name}
-                href={link.href}
-                onMouseEnter={() => setHoveredNav(link.name)}
-                onMouseLeave={() => setHoveredNav(null)}
-                className={`relative px-3.5 py-1.5 font-dm-sans text-[13px] font-semibold rounded-full transition-colors z-10 ${
-                  active ? "text-[#002622] font-bold" : "text-[#404946] hover:text-[#002622]"
-                }`}
-              >
-                {(active || hoveredNav === link.name) && (
-                  <motion.span
-                    layoutId="nav-glass-pill"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    className="absolute inset-0 rounded-full bg-white/90 shadow-2xs border border-[#013e37]/10 -z-10"
-                  />
-                )}
-                {link.name}
-              </Link>
-            );
-          })}
-        </nav>
+            })}
+          </nav>
+        </LayoutGroup>
 
         {/* 3. Right: Modern Action Cluster */}
         <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
           {/* EPA Diagnostic Glass Pill */}
           <Link
             href="/epa"
+            onClick={() => {
+              setActiveNav("EPA Diagnostic");
+              setHoveredNav(null);
+            }}
             className="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-dm-sans text-xs uppercase tracking-wider font-bold text-[#002622] bg-[#013e37]/[0.06] hover:bg-[#013e37]/[0.12] border border-[#013e37]/15 backdrop-blur-md shadow-2xs hover:shadow-xs transition-all hover:scale-[1.02] active:scale-[0.98] group"
           >
             <Compass className="w-3.5 h-3.5 text-[#013e37] group-hover:rotate-45 transition-transform duration-300" />
@@ -347,7 +430,7 @@ export default function Header({ onOpenApply }: HeaderProps) {
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 inline-block animate-pulse shrink-0" />
                   <span className="font-dm-sans text-[10.5px] uppercase tracking-wider text-[#695e2f] font-bold">
-                    3G Alliance • Mission 2050
+                    3G IRPS • Mission Malayalapuram 2050
                   </span>
                 </div>
                 <span className="text-[10px] font-dm-sans text-[#707976] font-semibold">Official Platform</span>
@@ -368,7 +451,7 @@ export default function Header({ onOpenApply }: HeaderProps) {
                 <div className="flex items-center justify-between px-4 py-1.5 mb-1">
                   <span className="font-manrope font-bold text-[#002622] text-xs uppercase tracking-wider flex items-center gap-1.5">
                     <Layers className="w-3.5 h-3.5 text-[#695e2f]" />
-                    Academic Programmes
+                    Courses & Academic Tracks
                   </span>
                   <Link
                     href="/programmes"

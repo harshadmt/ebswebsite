@@ -62,7 +62,7 @@ export default function ProgrammesPage() {
       audience: "Builders with nascent prototypes, verified problem hypotheses, or technical specialists seeking a commercial venture partner.",
       admissionMetric: "EPA 65+",
       admissionSub: "plus prototype review by faculty",
-      mentorship: "Full access to 3G Rapid Prototyping Sandbox & Malappuram 2050 Urban Testbeds.",
+      mentorship: "Full access to 3G IRPS Rapid Prototyping Sandbox & Malayalapuram 2050 Urban Testbeds.",
       modules: [
         { title: "Customer Discovery Loops", desc: "100-interview qualitative validation framework" },
         { title: "Product-Market Fit Engineering", desc: "Quantitative Sean Ellis test metrics" },
@@ -83,7 +83,7 @@ export default function ProgrammesPage() {
       audience: "Full-time committed venture founders with verified prototypes ready to execute customer acquisition and governance setup.",
       admissionMetric: "EPA 72+",
       admissionSub: "plus institutional committee interview",
-      mentorship: "Direct placement into the 3G Seed Investment Syndicate and syndicate demo-day pitch room.",
+      mentorship: "Direct placement into the 3G IRPS Seed Investment Syndicate and syndicate demo-day pitch room.",
       modules: [
         { title: "Go-To-Market Execution", desc: "Outbound SDR engines & self-serve acquisition funnels" },
         { title: "Sales Pipeline Architecture", desc: "Enterprise contract negotiations and deal closures" },
@@ -125,7 +125,7 @@ export default function ProgrammesPage() {
       audience: "High-calibre visionary founders, corporate innovators, industrial enterprise successors, and leaders shaping national-scale industrial ecosystems.",
       admissionMetric: "EPA 88+",
       admissionSub: "Strictly capped at 12 fellows per cohort",
-      mentorship: "Direct inclusion in Mission Malappuram 2050 Sovereign Development Council & Global Advisory Board.",
+      mentorship: "Direct inclusion in Mission Malayalapuram 2050 Sovereign Development Council & Global Advisory Board.",
       modules: [
         { title: "Conglomerate Architecture", desc: "Holding company asset orchestration & capital recycling" },
         { title: "Strategic Capital Allocation", desc: "Sovereign wealth interplay, buyouts, and IPO syndication" },
@@ -222,20 +222,27 @@ export default function ProgrammesPage() {
                 key={tab.id}
                 onClick={() => setActiveFilter(tab.id as FilterCategory)}
                 type="button"
-                className={`px-4 py-2 font-dm-sans text-xs uppercase tracking-wider font-bold rounded-full transition-all cursor-pointer whitespace-nowrap ${
+                className={`relative px-4 py-2 font-dm-sans text-xs uppercase tracking-wider font-bold rounded-full transition-colors cursor-pointer whitespace-nowrap ${
                   activeFilter === tab.id
-                    ? "bg-[#002622] text-[#ffefb3] shadow-xs"
+                    ? "text-[#ffefb3]"
                     : "text-[#404946] hover:text-[#002622] hover:bg-[#ebf6f2]"
                 }`}
               >
-                {tab.label}
+                {activeFilter === tab.id && (
+                  <motion.div
+                    layoutId="programmes-filter-active-pill"
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    className="absolute inset-0 bg-[#002622] rounded-full shadow-xs"
+                  />
+                )}
+                <span className="relative z-10">{tab.label}</span>
               </button>
             ))}
           </div>
 
           <div className="hidden md:flex items-center gap-2 text-xs font-inter">
             <span className="font-dm-sans uppercase font-bold text-[#707976]">Framework:</span>
-            <span className="font-semibold text-[#002622]">Mission Malappuram 2050 Venture Alignment</span>
+            <span className="font-semibold text-[#002622]">Mission Malayalapuram 2050 Venture Alignment</span>
           </div>
         </div>
       </section>

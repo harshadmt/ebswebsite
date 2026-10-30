@@ -12,38 +12,35 @@ export const viewport: Viewport = {
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
-  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm-sans",
-  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Entrepreneurs Business School (EBS) | In Alliance with 3G & Mission Malappuram 2050",
+  title: "Entrepreneur Business School (EBS) | In Alliance with 3G IRPS & Mission Malayalapuram 2050",
   description: "Become a Billion Dollar Founder. An elite institutional web platform delivering practical venture education across 5 stages, from idea feasibility to sovereign conglomerate scale.",
   keywords: [
-    "Entrepreneurs Business School",
+    "Entrepreneur Business School",
     "EBS",
-    "Mission Malappuram 2050",
-    "3G Alliance",
+    "Mission Malayalapuram 2050",
+    "3G IRPS",
     "Entrepreneur Potential Assessment",
     "Startup Accelerator",
     "Billion Dollar Founder",
     "Venture Scale",
   ],
-  authors: [{ name: "Entrepreneurs Business School" }],
+  authors: [{ name: "Entrepreneur Business School" }],
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -58,8 +55,8 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   openGraph: {
-    title: "Entrepreneurs Business School (EBS) | Official Institutional Platform",
-    description: "Developing the founders of tomorrow. Think Bigger. Build Bigger. Progressive venture education in alliance with 3G and Mission Malappuram 2050.",
+    title: "Entrepreneur Business School (EBS) | Official Institutional Platform",
+    description: "Developing the founders of tomorrow. Think Bigger. Build Bigger. Progressive venture education in alliance with 3G IRPS and Mission Malayalapuram 2050.",
     type: "website",
     locale: "en_US",
   },

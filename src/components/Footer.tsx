@@ -27,7 +27,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <div className="relative w-10 h-10 p-1 bg-white rounded-md overflow-hidden">
                 <Image
-                  src="/assets/logo1.jpg"
+                  src="/assets/ebs-shield-crest.png"
                   alt="EBS Crest"
                   fill
                   sizes="40px"
@@ -36,16 +36,16 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="font-manrope text-lg font-bold text-white tracking-tight leading-none">
-                  Entrepreneurs Business School
+                  Entrepreneur Business School
                 </span>
                 <span className="font-dm-sans text-[11px] uppercase tracking-wider text-[#ffefb3] mt-1 font-medium">
-                  3G Alliance & Mission 2050
+                  3G IRPS & Mission Malayalapuram 2050
                 </span>
               </div>
             </div>
 
             <p className="font-inter text-sm text-[#9cd1c7] leading-relaxed">
-              An academic venture institution engineered to transform ambitious founders and scalable enterprises. Operating in institutional alignment with 3G and the civic transformation vision of Mission Malappuram 2050.
+              An academic venture institution engineered to transform ambitious founders and scalable enterprises. Operating in institutional alignment with 3G IRPS and the civic transformation vision of Mission Malayalapuram 2050.
             </p>
 
             <div className="p-4 bg-[#013e37] rounded-xl border border-[#013e37]/80">
@@ -56,7 +56,7 @@ export default function Footer() {
                 </span>
               </div>
               <p className="font-inter text-xs text-[#b8ede2]/80 leading-relaxed">
-                Mission Malappuram 2050 Sovereign Venture Fellowship & Regional High-Growth Enterprise Network.
+                Mission Malayalapuram 2050 Sovereign Venture Fellowship & Regional High-Growth Enterprise Network.
               </p>
             </div>
           </div>
@@ -176,7 +176,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[#013e37] flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-inter text-[#76a9a0]">
           <p>
-            © {new Date().getFullYear()} Entrepreneurs Business School (EBS). All institutional rights reserved. Associated with 3G & Mission Malappuram 2050.
+            © {new Date().getFullYear()} Entrepreneur Business School (EBS). All institutional rights reserved. Associated with 3G IRPS & Mission Malayalapuram 2050.
           </p>
           <div className="flex items-center gap-6 font-dm-sans uppercase tracking-wider text-[11px]">
             <Link href="/privacy" className="hover:text-white transition-colors">

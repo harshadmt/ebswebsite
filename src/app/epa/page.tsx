@@ -190,7 +190,7 @@ export default function EPAPage() {
                   </span>
                 </div>
                 <p className="font-inter text-xs text-[#b8ede2]/80 leading-relaxed">
-                  Over 1,400+ prospective founders evaluated across Kerala & global diaspora under Mission Malappuram 2050 framework.
+                  Over 1,400+ prospective founders evaluated across Kerala & global diaspora under Mission Malayalapuram 2050 framework.
                 </p>
               </div>
             </div>
@@ -460,11 +460,11 @@ export default function EPAPage() {
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#013e37] shrink-0 mt-0.5" />
-                    <span>Evaluated by Venture Fellows & 3G Partners</span>
+                    <span>Evaluated by Venture Fellows & 3G IRPS Partners</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#013e37] shrink-0 mt-0.5" />
-                    <span>Mission Malappuram 2050 ecosystem fit</span>
+                    <span>Mission Malayalapuram 2050 ecosystem fit</span>
                   </div>
                 </div>
               </div>
@@ -612,190 +612,221 @@ export default function EPAPage() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   type="button"
-                  className={`px-4 py-2 rounded-lg font-dm-sans text-xs uppercase font-bold tracking-wider transition-colors cursor-pointer whitespace-nowrap ${
+                  className={`relative px-4 py-2 rounded-lg font-dm-sans text-xs uppercase font-bold tracking-wider transition-colors cursor-pointer whitespace-nowrap ${
                     activeTab === tab.id
-                      ? "bg-[#002622] text-[#ffefb3] shadow-xs"
+                      ? "text-[#ffefb3]"
                       : "bg-[#ebf6f2] text-[#404946] hover:bg-[#dfebe7]"
                   }`}
                 >
-                  {tab.label}
+                  {activeTab === tab.id && (
+                    <motion.div
+                      layoutId="epa-tab-active-pill"
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      className="absolute inset-0 bg-[#002622] rounded-lg shadow-xs"
+                    />
+                  )}
+                  <span className="relative z-10">{tab.label}</span>
                 </button>
               ))}
             </div>
 
-            {/* Question 1 */}
-            {activeTab === 1 && (
-              <div className="flex flex-col gap-5">
-                <div className="flex items-center justify-between text-xs font-dm-sans">
-                  <span className="text-[#695e2f] uppercase font-bold tracking-wider">
-                    Pillar: Commercial Calculus
-                  </span>
-                  <span className="text-[#707976] font-semibold">Weight: 10 Pts</span>
-                </div>
+            {/* Questions with Smooth Tab Transitions */}
+            <AnimatePresence mode="wait">
+              {/* Question 1 */}
+              {activeTab === 1 && (
+                <motion.div
+                  key="epa-tab-1"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.22, ease: "easeOut" }}
+                  className="flex flex-col gap-5"
+                >
+                  <div className="flex items-center justify-between text-xs font-dm-sans">
+                    <span className="text-[#695e2f] uppercase font-bold tracking-wider">
+                      Pillar: Commercial Calculus
+                    </span>
+                    <span className="text-[#707976] font-semibold">Weight: 10 Pts</span>
+                  </div>
 
-                <h4 className="font-manrope text-base sm:text-lg font-bold text-[#002622] leading-snug">
-                  A B2B SaaS startup targeting Indian export manufacturing achieves $18K MRR with 4.5% monthly churn. CAC is $3,200 and ARPU is $450/month. What is your primary strategic bottleneck?
-                </h4>
+                  <h4 className="font-manrope text-base sm:text-lg font-bold text-[#002622] leading-snug">
+                    A B2B SaaS startup targeting Indian export manufacturing achieves $18K MRR with 4.5% monthly churn. CAC is $3,200 and ARPU is $450/month. What is your primary strategic bottleneck?
+                  </h4>
 
-                <div className="flex flex-col gap-3">
-                  {[
-                    { id: 1, letter: "A", text: "Top-of-funnel customer acquisition velocity is excessively constrained by sales cycle.", correct: false },
-                    { id: 2, letter: "B", text: "CAC payback period exceeds 7 months while annual churn compounds to nearly 43%, degrading LTV.", correct: true },
-                    { id: 3, letter: "C", text: "Gross margins are insufficient to support venture debt financing.", correct: false },
-                  ].map((opt) => (
-                    <button
-                      key={opt.id}
-                      onClick={() => handleSelectOption(1, opt.id, opt.correct)}
-                      type="button"
-                      className={`w-full text-left p-4 rounded-xl border transition-all flex items-start gap-3 cursor-pointer ${
-                        selectedAnswers[1] === opt.id
-                          ? opt.correct
-                            ? "bg-[#f1fcf8] border-[#013e37] ring-2 ring-[#013e37]/20"
-                            : "bg-[#ffdad6]/20 border-[#ba1a1a]"
-                          : "bg-[#f1fcf8] border-[#013e37]/10 hover:bg-[#ebf6f2]"
+                  <div className="flex flex-col gap-3">
+                    {[
+                      { id: 1, letter: "A", text: "Top-of-funnel customer acquisition velocity is excessively constrained by sales cycle.", correct: false },
+                      { id: 2, letter: "B", text: "CAC payback period exceeds 7 months while annual churn compounds to nearly 43%, degrading LTV.", correct: true },
+                      { id: 3, letter: "C", text: "Gross margins are insufficient to support venture debt financing.", correct: false },
+                    ].map((opt) => (
+                      <button
+                        key={opt.id}
+                        onClick={() => handleSelectOption(1, opt.id, opt.correct)}
+                        type="button"
+                        className={`w-full text-left p-4 rounded-xl border transition-all duration-200 flex items-start gap-3 cursor-pointer ${
+                          selectedAnswers[1] === opt.id
+                            ? opt.correct
+                              ? "bg-[#f1fcf8] border-[#013e37] ring-2 ring-[#013e37]/20 shadow-xs"
+                              : "bg-[#ffdad6]/20 border-[#ba1a1a]"
+                            : "bg-[#f1fcf8] border-[#013e37]/10 hover:bg-[#ebf6f2]"
+                        }`}
+                      >
+                        <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center font-dm-sans text-xs font-bold text-[#002622] shrink-0 border border-[#013e37]/20 transition-transform duration-200">
+                          {opt.letter}
+                        </span>
+                        <span className="font-inter text-xs sm:text-sm text-[#131d1c] leading-relaxed">
+                          {opt.text}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+
+                  {feedbacks[1] && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className={`p-4 rounded-xl text-xs font-inter leading-relaxed ${
+                        feedbacks[1].isCorrect
+                          ? "bg-[#ebf6f2] text-[#002622] border border-[#013e37]/20"
+                          : "bg-[#ffdad6]/40 text-[#ba1a1a] border border-[#ba1a1a]/30"
                       }`}
                     >
-                      <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center font-dm-sans text-xs font-bold text-[#002622] shrink-0 border border-[#013e37]/20">
-                        {opt.letter}
-                      </span>
-                      <span className="font-inter text-xs sm:text-sm text-[#131d1c] leading-relaxed">
-                        {opt.text}
-                      </span>
-                    </button>
-                  ))}
-                </div>
+                      {feedbacks[1].text}
+                    </motion.div>
+                  )}
+                </motion.div>
+              )}
 
-                {feedbacks[1] && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className={`p-4 rounded-xl text-xs font-inter leading-relaxed ${
-                      feedbacks[1].isCorrect
-                        ? "bg-[#ebf6f2] text-[#002622] border border-[#013e37]/20"
-                        : "bg-[#ffdad6]/40 text-[#ba1a1a] border border-[#ba1a1a]/30"
-                    }`}
-                  >
-                    {feedbacks[1].text}
-                  </motion.div>
-                )}
-              </div>
-            )}
+              {/* Question 2 */}
+              {activeTab === 2 && (
+                <motion.div
+                  key="epa-tab-2"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.22, ease: "easeOut" }}
+                  className="flex flex-col gap-5"
+                >
+                  <div className="flex items-center justify-between text-xs font-dm-sans">
+                    <span className="text-[#695e2f] uppercase font-bold tracking-wider">
+                      Pillar: Execution Under Scarcity
+                    </span>
+                    <span className="text-[#707976] font-semibold">Weight: 15 Pts</span>
+                  </div>
 
-            {/* Question 2 */}
-            {activeTab === 2 && (
-              <div className="flex flex-col gap-5">
-                <div className="flex items-center justify-between text-xs font-dm-sans">
-                  <span className="text-[#695e2f] uppercase font-bold tracking-wider">
-                    Pillar: Execution Under Scarcity
-                  </span>
-                  <span className="text-[#707976] font-semibold">Weight: 15 Pts</span>
-                </div>
+                  <h4 className="font-manrope text-base sm:text-lg font-bold text-[#002622] leading-snug">
+                    Your pilot customer in Malappuram cancels an enterprise agreement 10 days before payroll, reducing your cash runway to 3.5 weeks. How do you deploy leadership action?
+                  </h4>
 
-                <h4 className="font-manrope text-base sm:text-lg font-bold text-[#002622] leading-snug">
-                  Your pilot customer in Malappuram cancels an enterprise agreement 10 days before payroll, reducing your cash runway to 3.5 weeks. How do you deploy leadership action?
-                </h4>
+                  <div className="flex flex-col gap-3">
+                    {[
+                      { id: 1, letter: "A", text: "Immediately freeze all engineering work and initiate emergency bridge round talks with angels.", correct: false },
+                      { id: 2, letter: "B", text: "Pre-sell customized quarterly implementation packages to 3 pipeline prospects at a 20% upfront discount to capture immediate receivables.", correct: true },
+                      { id: 3, letter: "C", text: "Furlough 50% of the operational team while preserving personal capital reserves.", correct: false },
+                    ].map((opt) => (
+                      <button
+                        key={opt.id}
+                        onClick={() => handleSelectOption(2, opt.id, opt.correct)}
+                        type="button"
+                        className={`w-full text-left p-4 rounded-xl border transition-all duration-200 flex items-start gap-3 cursor-pointer ${
+                          selectedAnswers[2] === opt.id
+                            ? opt.correct
+                              ? "bg-[#f1fcf8] border-[#013e37] ring-2 ring-[#013e37]/20 shadow-xs"
+                              : "bg-[#ffdad6]/20 border-[#ba1a1a]"
+                            : "bg-[#f1fcf8] border-[#013e37]/10 hover:bg-[#ebf6f2]"
+                        }`}
+                      >
+                        <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center font-dm-sans text-xs font-bold text-[#002622] shrink-0 border border-[#013e37]/20 transition-transform duration-200">
+                          {opt.letter}
+                        </span>
+                        <span className="font-inter text-xs sm:text-sm text-[#131d1c] leading-relaxed">
+                          {opt.text}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
 
-                <div className="flex flex-col gap-3">
-                  {[
-                    { id: 1, letter: "A", text: "Immediately freeze all engineering work and initiate emergency bridge round talks with angels.", correct: false },
-                    { id: 2, letter: "B", text: "Pre-sell customized quarterly implementation packages to 3 pipeline prospects at a 20% upfront discount to capture immediate receivables.", correct: true },
-                    { id: 3, letter: "C", text: "Furlough 50% of the operational team while preserving personal capital reserves.", correct: false },
-                  ].map((opt) => (
-                    <button
-                      key={opt.id}
-                      onClick={() => handleSelectOption(2, opt.id, opt.correct)}
-                      type="button"
-                      className={`w-full text-left p-4 rounded-xl border transition-all flex items-start gap-3 cursor-pointer ${
-                        selectedAnswers[2] === opt.id
-                          ? opt.correct
-                            ? "bg-[#f1fcf8] border-[#013e37] ring-2 ring-[#013e37]/20"
-                            : "bg-[#ffdad6]/20 border-[#ba1a1a]"
-                          : "bg-[#f1fcf8] border-[#013e37]/10 hover:bg-[#ebf6f2]"
+                  {feedbacks[2] && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className={`p-4 rounded-xl text-xs font-inter leading-relaxed ${
+                        feedbacks[2].isCorrect
+                          ? "bg-[#ebf6f2] text-[#002622] border border-[#013e37]/20"
+                          : "bg-[#ffdad6]/40 text-[#ba1a1a] border border-[#ba1a1a]/30"
                       }`}
                     >
-                      <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center font-dm-sans text-xs font-bold text-[#002622] shrink-0 border border-[#013e37]/20">
-                        {opt.letter}
-                      </span>
-                      <span className="font-inter text-xs sm:text-sm text-[#131d1c] leading-relaxed">
-                        {opt.text}
-                      </span>
-                    </button>
-                  ))}
-                </div>
+                      {feedbacks[2].text}
+                    </motion.div>
+                  )}
+                </motion.div>
+              )}
 
-                {feedbacks[2] && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className={`p-4 rounded-xl text-xs font-inter leading-relaxed ${
-                      feedbacks[2].isCorrect
-                        ? "bg-[#ebf6f2] text-[#002622] border border-[#013e37]/20"
-                        : "bg-[#ffdad6]/40 text-[#ba1a1a] border border-[#ba1a1a]/30"
-                    }`}
-                  >
-                    {feedbacks[2].text}
-                  </motion.div>
-                )}
-              </div>
-            )}
+              {/* Question 3 */}
+              {activeTab === 3 && (
+                <motion.div
+                  key="epa-tab-3"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.22, ease: "easeOut" }}
+                  className="flex flex-col gap-5"
+                >
+                  <div className="flex items-center justify-between text-xs font-dm-sans">
+                    <span className="text-[#695e2f] uppercase font-bold tracking-wider">
+                      Pillar: Strategic Resilience
+                    </span>
+                    <span className="text-[#707976] font-semibold">Weight: 10 Pts</span>
+                  </div>
 
-            {/* Question 3 */}
-            {activeTab === 3 && (
-              <div className="flex flex-col gap-5">
-                <div className="flex items-center justify-between text-xs font-dm-sans">
-                  <span className="text-[#695e2f] uppercase font-bold tracking-wider">
-                    Pillar: Strategic Resilience
-                  </span>
-                  <span className="text-[#707976] font-semibold">Weight: 10 Pts</span>
-                </div>
+                  <h4 className="font-manrope text-base sm:text-lg font-bold text-[#002622] leading-snug">
+                    After 8 months of product validation, a well-capitalized competitor releases an exact clone backed by 5x your marketing budget. What is your calculated response?
+                  </h4>
 
-                <h4 className="font-manrope text-base sm:text-lg font-bold text-[#002622] leading-snug">
-                  After 8 months of product validation, a well-capitalized competitor releases an exact clone backed by 5x your marketing budget. What is your calculated response?
-                </h4>
+                  <div className="flex flex-col gap-3">
+                    {[
+                      { id: 1, letter: "A", text: "Slash unit prices across all product tiers by 35% to undercut customer transition.", correct: false },
+                      { id: 2, letter: "B", text: "Pivot completely to an adjacent unserved market vertical to evade direct brand friction.", correct: false },
+                      { id: 3, letter: "C", text: "Double down on hyper-specialized vertical workflow integrations and proprietary data lock-in that cannot be cloned via ad spend.", correct: true },
+                    ].map((opt) => (
+                      <button
+                        key={opt.id}
+                        onClick={() => handleSelectOption(3, opt.id, opt.correct)}
+                        type="button"
+                        className={`w-full text-left p-4 rounded-xl border transition-all duration-200 flex items-start gap-3 cursor-pointer ${
+                          selectedAnswers[3] === opt.id
+                            ? opt.correct
+                              ? "bg-[#f1fcf8] border-[#013e37] ring-2 ring-[#013e37]/20 shadow-xs"
+                              : "bg-[#ffdad6]/20 border-[#ba1a1a]"
+                            : "bg-[#f1fcf8] border-[#013e37]/10 hover:bg-[#ebf6f2]"
+                        }`}
+                      >
+                        <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center font-dm-sans text-xs font-bold text-[#002622] shrink-0 border border-[#013e37]/20 transition-transform duration-200">
+                          {opt.letter}
+                        </span>
+                        <span className="font-inter text-xs sm:text-sm text-[#131d1c] leading-relaxed">
+                          {opt.text}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
 
-                <div className="flex flex-col gap-3">
-                  {[
-                    { id: 1, letter: "A", text: "Slash unit prices across all product tiers by 35% to undercut customer transition.", correct: false },
-                    { id: 2, letter: "B", text: "Pivot completely to an adjacent unserved market vertical to evade direct brand friction.", correct: false },
-                    { id: 3, letter: "C", text: "Double down on hyper-specialized vertical workflow integrations and proprietary data lock-in that cannot be cloned via ad spend.", correct: true },
-                  ].map((opt) => (
-                    <button
-                      key={opt.id}
-                      onClick={() => handleSelectOption(3, opt.id, opt.correct)}
-                      type="button"
-                      className={`w-full text-left p-4 rounded-xl border transition-all flex items-start gap-3 cursor-pointer ${
-                        selectedAnswers[3] === opt.id
-                          ? opt.correct
-                            ? "bg-[#f1fcf8] border-[#013e37] ring-2 ring-[#013e37]/20"
-                            : "bg-[#ffdad6]/20 border-[#ba1a1a]"
-                          : "bg-[#f1fcf8] border-[#013e37]/10 hover:bg-[#ebf6f2]"
+                  {feedbacks[3] && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className={`p-4 rounded-xl text-xs font-inter leading-relaxed ${
+                        feedbacks[3].isCorrect
+                          ? "bg-[#ebf6f2] text-[#002622] border border-[#013e37]/20"
+                          : "bg-[#ffdad6]/40 text-[#ba1a1a] border border-[#ba1a1a]/30"
                       }`}
                     >
-                      <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center font-dm-sans text-xs font-bold text-[#002622] shrink-0 border border-[#013e37]/20">
-                        {opt.letter}
-                      </span>
-                      <span className="font-inter text-xs sm:text-sm text-[#131d1c] leading-relaxed">
-                        {opt.text}
-                      </span>
-                    </button>
-                  ))}
-                </div>
-
-                {feedbacks[3] && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className={`p-4 rounded-xl text-xs font-inter leading-relaxed ${
-                      feedbacks[3].isCorrect
-                        ? "bg-[#ebf6f2] text-[#002622] border border-[#013e37]/20"
-                        : "bg-[#ffdad6]/40 text-[#ba1a1a] border border-[#ba1a1a]/30"
-                    }`}
-                  >
-                    {feedbacks[3].text}
-                  </motion.div>
-                )}
-              </div>
-            )}
+                      {feedbacks[3].text}
+                    </motion.div>
+                  )}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </section>
@@ -813,7 +844,7 @@ export default function EPAPage() {
               Register for the Next EPA Cycle
             </h2>
             <p className="font-inter text-sm md:text-base text-[#404946] leading-relaxed">
-              EPA assessments are administered bi-weekly in synchronized cohorts. Successful completion unlocks prioritized fellowship consideration, faculty mentorship matching, and institutional funding eligibility under Mission Malappuram 2050.
+              EPA assessments are administered bi-weekly in synchronized cohorts. Successful completion unlocks prioritized fellowship consideration, faculty mentorship matching, and institutional funding eligibility under Mission Malayalapuram 2050.
             </p>
 
             <div className="bg-white p-6 rounded-2xl shadow-xs border border-[#013e37]/10 flex flex-col gap-3">
@@ -980,7 +1011,7 @@ export default function EPAPage() {
                     className="mt-1 w-4 h-4 rounded text-[#002622] focus:ring-[#002622]"
                   />
                   <label htmlFor="ndaCheck" className="font-inter text-xs text-[#404946] leading-relaxed cursor-pointer">
-                    I certify that all responses provided in the EPA will represent my authentic strategic intuition. I consent to EBS evaluation standards under 3G Alliance guidance.
+                    I certify that all responses provided in the EPA will represent my authentic strategic intuition. I consent to EBS evaluation standards under 3G IRPS guidance.
                   </label>
                 </div>
 
