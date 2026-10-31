@@ -295,7 +295,7 @@ export default function PageLoader({
         {label}
       </h2>
       <p className="font-dm-sans text-[9px] tracking-[0.22em] text-[#c8aa6e] uppercase font-semibold mt-1">
-        Become a Billion Dollar Founder
+        Become a Million Dollar Founder
       </p>
 
       {/* Hairline Gold Liquid Track */}

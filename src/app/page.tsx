@@ -79,7 +79,7 @@ export default function HomePage() {
             >
               <h1 className="font-manrope text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08]">
                 Become a <br />
-                <span className="text-[#ffefb3] italic font-normal">Billion Dollar</span> Founder.
+                <span className="text-[#ffefb3] italic font-normal">Million Dollar</span> Founder.
               </h1>
 
               <p className="font-inter text-base sm:text-lg lg:text-xl text-[#9cd1c7] leading-relaxed max-w-2xl">
@@ -238,7 +238,7 @@ export default function HomePage() {
               Think Bigger. Build Bigger.
             </h2>
             <p className="font-inter text-base sm:text-lg text-[#404946] mt-4 leading-relaxed">
-              A Billion-Dollar Vision Begins with a Founder Mindset. True enterprise resilience cannot be taught through passive observation; it is forged across five decisive dimensions of venture stewardship.
+              A Million-Dollar Vision Begins with a Founder Mindset. True enterprise resilience cannot be taught through passive observation; it is forged across five decisive dimensions of venture stewardship.
             </p>
           </motion.div>
 
@@ -573,7 +573,7 @@ export default function HomePage() {
                 </p>
                 <div className="flex flex-wrap gap-1.5 mt-3">
                   <span className="bg-white/10 text-[#ffefb3] text-xs px-2.5 py-1 rounded font-medium">
-                    Billion-Dollar Moats
+                    Million-Dollar Moats
                   </span>
                   <span className="bg-white/10 text-[#ffefb3] text-xs px-2.5 py-1 rounded font-medium">
                     Sovereign Wealth Integration
@@ -1120,7 +1120,7 @@ export default function HomePage() {
           </div>
 
           <h2 className="font-manrope text-4xl sm:text-5xl lg:text-7xl text-[#ffefb3] max-w-4xl tracking-tight leading-none mb-6 font-bold">
-            Become a Billion Dollar Founder.
+            Become a Million Dollar Founder.
           </h2>
 
           <p className="font-inter text-base sm:text-xl text-[#9cd1c7] max-w-2xl mx-auto leading-relaxed mb-10">
