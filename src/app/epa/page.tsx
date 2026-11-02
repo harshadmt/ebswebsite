@@ -190,7 +190,7 @@ export default function EPAPage() {
                   </span>
                 </div>
                 <p className="font-inter text-xs text-[#b8ede2]/80 leading-relaxed">
-                  Over 1,400+ prospective founders evaluated across Kerala & global diaspora under Mission Malayalapuram 2050 framework.
+                  Over 1,400+ prospective founders evaluated across Kerala & global diaspora under Mission Malappuram 2050 framework.
                 </p>
               </div>
             </div>
@@ -464,7 +464,7 @@ export default function EPAPage() {
                   </div>
                   <div className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#013e37] shrink-0 mt-0.5" />
-                    <span>Mission Malayalapuram 2050 ecosystem fit</span>
+                    <span>Mission Malappuram 2050 ecosystem fit</span>
                   </div>
                 </div>
               </div>
@@ -844,7 +844,7 @@ export default function EPAPage() {
               Register for the Next EPA Cycle
             </h2>
             <p className="font-inter text-sm md:text-base text-[#404946] leading-relaxed">
-              EPA assessments are administered bi-weekly in synchronized cohorts. Successful completion unlocks prioritized fellowship consideration, faculty mentorship matching, and institutional funding eligibility under Mission Malayalapuram 2050.
+              EPA assessments are administered bi-weekly in synchronized cohorts. Successful completion unlocks prioritized fellowship consideration, faculty mentorship matching, and institutional funding eligibility under Mission Malappuram 2050.
             </p>
 
             <div className="bg-white p-6 rounded-2xl shadow-xs border border-[#013e37]/10 flex flex-col gap-3">

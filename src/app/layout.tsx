@@ -28,12 +28,12 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Entrepreneur Business School (EBS) | In Alliance with 3G IRPS & Mission Malayalapuram 2050",
+  title: "Entrepreneur Business School (EBS) | In Alliance with 3G IRPS & Mission Malappuram 2050",
   description: "Become a Million Dollar Founder. An elite institutional web platform delivering practical venture education across 5 stages, from idea feasibility to sovereign conglomerate scale.",
   keywords: [
     "Entrepreneur Business School",
     "EBS",
-    "Mission Malayalapuram 2050",
+    "Mission Malappuram 2050",
     "3G IRPS",
     "Entrepreneur Potential Assessment",
     "Startup Accelerator",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   openGraph: {
     title: "Entrepreneur Business School (EBS) | Official Institutional Platform",
-    description: "Developing the founders of tomorrow. Think Bigger. Build Bigger. Progressive venture education in alliance with 3G IRPS and Mission Malayalapuram 2050.",
+    description: "Developing the founders of tomorrow. Think Bigger. Build Bigger. Progressive venture education in alliance with 3G IRPS and Mission Malappuram 2050.",
     type: "website",
     locale: "en_US",
   },

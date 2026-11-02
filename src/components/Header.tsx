@@ -146,7 +146,7 @@ export default function Header({ onOpenApply }: HeaderProps) {
           <div className="hidden 2xl:flex items-center gap-2 pl-3 border-l border-[#013e37]/15">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 inline-block animate-pulse shrink-0" />
             <span className="font-dm-sans text-[10px] uppercase tracking-wider text-[#695e2f] font-bold whitespace-nowrap">
-              In Alliance with 3G IRPS & Mission Malayalapuram 2050
+              In Alliance with 3G IRPS & Mission Malappuram 2050
             </span>
           </div>
         </Link>
@@ -430,7 +430,7 @@ export default function Header({ onOpenApply }: HeaderProps) {
                 <div className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 inline-block animate-pulse shrink-0" />
                   <span className="font-dm-sans text-[10.5px] uppercase tracking-wider text-[#695e2f] font-bold">
-                    3G IRPS • Mission Malayalapuram 2050
+                    3G IRPS • Mission Malappuram 2050
                   </span>
                 </div>
                 <span className="text-[10px] font-dm-sans text-[#707976] font-semibold">Official Platform</span>

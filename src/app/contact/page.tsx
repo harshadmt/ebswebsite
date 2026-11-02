@@ -56,7 +56,7 @@ export default function ContactPage() {
           </h1>
 
           <p className="font-inter text-base text-[#9cd1c7] max-w-2xl">
-            Inquiries regarding fellowship admissions, research monographs, partner syndicates, or Mission Malayalapuram 2050 testbed access.
+            Inquiries regarding fellowship admissions, research monographs, partner syndicates, or Mission Malappuram 2050 testbed access.
           </p>
         </div>
       </section>
@@ -219,7 +219,7 @@ export default function ContactPage() {
                     >
                       <option value="admissions">Fellowship Admissions & EPA</option>
                       <option value="curriculum">Programme Curriculum Question</option>
-                      <option value="partnership">3G IRPS / Mission Malayalapuram 2050 Partnership</option>
+                      <option value="partnership">3G IRPS / Mission Malappuram 2050 Partnership</option>
                       <option value="media">Media & Monograph Inquiry</option>
                       <option value="other">General Registry Support</option>
                     </select>

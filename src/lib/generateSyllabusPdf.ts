@@ -106,7 +106,7 @@ export function buildSyllabusPdfBlob(
   // Alliance Charter Tag
   ops.push("BT /F1 8.5 Tf 1.0 0.937 0.702 rg");
   ops.push(`38 ${H - 118} Td`);
-  ops.push(`(${escapePdfText("In Alliance with 3G IRPS & Mission Malayalapuram 2050")}) Tj ET`);
+  ops.push(`(${escapePdfText("In Alliance with 3G IRPS & Mission Malappuram 2050")}) Tj ET`);
 
   // 7. Executive Pedagogical Objective Box (#EBF6F2)
   const objY = H - 215;
@@ -207,14 +207,14 @@ export function buildSyllabusPdfBlob(
   ops.push(`340 ${certY - 12} Td`);
   ops.push(`(${escapePdfText("Official Registry: registrar@ebs-institution.org")}) Tj ET`);
   ops.push(`340 ${certY - 22} Td`);
-  ops.push(`(${escapePdfText("Mission Malayalapuram 2050 Sovereign Innovation Corridor")}) Tj ET`);
+  ops.push(`(${escapePdfText("Mission Malappuram 2050 Sovereign Innovation Corridor")}) Tj ET`);
 
   // 11. Institutional Bottom Bar (#002622 Deep Pine)
   ops.push("0.0 0.149 0.133 rg");
   ops.push(`22 22 ${W - 44} 24 re f`);
   ops.push("BT /F2 7.5 Tf 0.612 0.820 0.780 rg");
   ops.push(`38 30 Td`);
-  ops.push(`(${escapePdfText("(c) 2025 Entrepreneur Business School (EBS). All Institutional Rights Reserved. In Alliance with 3G IRPS & Mission Malayalapuram 2050.")}) Tj ET`);
+  ops.push(`(${escapePdfText("(c) 2025 Entrepreneur Business School (EBS). All Institutional Rights Reserved. In Alliance with 3G IRPS & Mission Malappuram 2050.")}) Tj ET`);
 
   ops.push("Q");
 

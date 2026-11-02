@@ -85,7 +85,7 @@ export default function ApplicationModal({
                 Apply for EBS Venture Fellowship
               </h3>
               <p className="font-inter text-xs text-[#9cd1c7] mt-1">
-                In Alliance with 3G IRPS & Mission Malayalapuram 2050
+                In Alliance with 3G IRPS & Mission Malappuram 2050
               </p>
             </div>
 
