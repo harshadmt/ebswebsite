@@ -101,7 +101,7 @@ export default function ApplicationModal({
                       Application Docket Registered
                     </h4>
                     <p className="font-inter text-sm text-[#404946] mt-2 max-w-md">
-                      Thank you, <strong className="text-[#002622]">{formData.name}</strong>. Your candidate file has been created. The EBS Admissions Secretariat will dispatch your EPA diagnostic link within 24 hours.
+                      Thank you, <strong className="text-[#002622]">{formData.name}</strong>. Your candidate file has been created. The EBS Admissions Secretariat will dispatch your admissions evaluation docket within 24 hours.
                     </p>
                   </div>
                   <div className="p-4 bg-[#f1fcf8] rounded-xl border border-[#013e37]/10 w-full text-left mt-2">

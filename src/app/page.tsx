@@ -19,12 +19,10 @@ import {
   Cpu, 
   Briefcase, 
   Lightbulb, 
-  Compass, 
   Target, 
   Calendar, 
   BookOpen,
-  ChevronRight,
-  BrainCircuit
+  ChevronRight
 } from "lucide-react";
 
 export default function HomePage() {
@@ -103,13 +101,14 @@ export default function HomePage() {
                   <ArrowRight className="ml-2 w-4 h-4 text-[#002622]" />
                 </Link>
 
-                <Link
-                  href="/epa"
-                  className="inline-flex items-center justify-center bg-white/10 text-white hover:bg-white/20 font-dm-sans font-semibold text-sm uppercase tracking-wider px-6 py-4 rounded-md backdrop-blur-sm border border-white/15 transition-all hover:scale-[1.02]"
+                <button
+                  onClick={() => openApplyModal("hero")}
+                  type="button"
+                  className="inline-flex items-center justify-center bg-white/10 text-white hover:bg-white/20 font-dm-sans font-semibold text-sm uppercase tracking-wider px-6 py-4 rounded-md backdrop-blur-sm border border-white/15 transition-all hover:scale-[1.02] cursor-pointer"
                 >
-                  Discover Your Potential (EPA)
-                  <BrainCircuit className="ml-2 w-4 h-4 text-[#ffefb3]" />
-                </Link>
+                  Apply for Fellowship
+                  <ArrowRight className="ml-2 w-4 h-4 text-[#ffefb3]" />
+                </button>
               </div>
             </motion.div>
 
@@ -775,118 +774,7 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================= */}
-      {/* 6. EPA DIAGNOSTIC TEASER */}
-      {/* ========================================================= */}
-      <section className="w-full py-24 bg-[#f1fcf8] relative overflow-hidden" id="epa">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="bg-[#002622] rounded-2xl text-white p-8 md:p-14 relative shadow-2xl overflow-hidden border border-[#ffefb3]/20">
-            {/* Ambient background rings */}
-            <div className="absolute -right-16 top-0 w-96 h-96 rounded-full bg-[#013e37]/70 blur-3xl pointer-events-none" />
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-              <div className="lg:col-span-5 flex flex-col gap-5">
-                <div className="inline-flex items-center gap-2 bg-[#ffefb3]/20 text-[#ffefb3] px-3.5 py-1 rounded-full w-max text-xs font-bold font-dm-sans uppercase tracking-wider">
-                  <BrainCircuit className="w-3.5 h-3.5" />
-                  Proprietary Diagnostic
-                </div>
-
-                <h2 className="font-manrope text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
-                  Entrepreneur Potential Assessment (EPA)
-                </h2>
-
-                <p className="font-manrope text-lg text-[#ffefb3] font-medium">
-                  Before Choosing Your Path, Understand Your Potential.
-                </p>
-
-                <p className="font-inter text-sm text-[#9cd1c7] leading-relaxed">
-                  Admission into EBS cohorts is preceded by an empirical, multi-dimensional diagnostic assessing risk temperament, operational bandwidth, strategic foresight, and relentless grit.
-                </p>
-
-                <div className="pt-2 flex flex-wrap gap-4">
-                  <Link
-                    href="/epa"
-                    className="inline-flex items-center gap-2 bg-[#ffefb3] text-[#002622] font-dm-sans font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-md hover:bg-[#fff5d1] transition-all shadow-md"
-                  >
-                    Take Sample Diagnostic
-                    <ArrowRight className="w-4 h-4 text-[#002622]" />
-                  </Link>
-
-                  <button
-                    onClick={() => openApplyModal("epa")}
-                    type="button"
-                    className="inline-flex items-center gap-2 bg-white/10 text-white font-dm-sans font-semibold text-xs uppercase tracking-wider px-6 py-3.5 rounded-md hover:bg-white/20 transition-all border border-white/15 cursor-pointer"
-                  >
-                    Register for Next Cycle
-                  </button>
-                </div>
-              </div>
-
-              {/* 3-Stage Assessment Methodology */}
-              <div className="lg:col-span-7 flex flex-col gap-4">
-                {/* Stage 1 */}
-                <div className="bg-white/10 backdrop-blur-md p-5 rounded-xl border border-white/10 flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-lg bg-white/10 flex flex-col items-center justify-center shrink-0">
-                    <span className="font-manrope text-xl font-bold text-[#ffefb3] leading-none">30%</span>
-                    <span className="text-[10px] uppercase text-[#9cd1c7] mt-0.5 font-dm-sans font-semibold">Weight</span>
-                  </div>
-                  <div>
-                    <span className="font-dm-sans text-xs uppercase tracking-wider text-[#ffefb3] font-bold">
-                      Stage 01
-                    </span>
-                    <h3 className="font-manrope text-base font-bold text-white">
-                      Entrepreneur Aptitude Test
-                    </h3>
-                    <p className="font-inter text-xs text-[#9cd1c7] mt-1 leading-relaxed">
-                      Cognitive problem decomposition, numerical reasoning, mental risk-reward calibration, and strategic intuition testing under simulated ambiguity.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Stage 2 */}
-                <div className="bg-white/10 backdrop-blur-md p-5 rounded-xl border border-white/10 flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-lg bg-[#ffefb3] text-[#002622] flex flex-col items-center justify-center shrink-0">
-                    <span className="font-manrope text-xl font-bold leading-none">50%</span>
-                    <span className="text-[10px] uppercase font-dm-sans font-bold mt-0.5">Weight</span>
-                  </div>
-                  <div>
-                    <span className="font-dm-sans text-xs uppercase tracking-wider text-[#ffefb3] font-bold">
-                      Stage 02
-                    </span>
-                    <h3 className="font-manrope text-base font-bold text-white">
-                      Practical Founder Challenge
-                    </h3>
-                    <p className="font-inter text-xs text-[#9cd1c7] mt-1 leading-relaxed">
-                      A 48-hour live sprint: examine real enterprise friction points, structure customer interview protocols, develop pricing logic, and pitch defensibility.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Stage 3 */}
-                <div className="bg-white/10 backdrop-blur-md p-5 rounded-xl border border-white/10 flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-lg bg-white/10 flex flex-col items-center justify-center shrink-0">
-                    <span className="font-manrope text-xl font-bold text-[#ffefb3] leading-none">20%</span>
-                    <span className="text-[10px] uppercase text-[#9cd1c7] mt-0.5 font-dm-sans font-semibold">Weight</span>
-                  </div>
-                  <div>
-                    <span className="font-dm-sans text-xs uppercase tracking-wider text-[#ffefb3] font-bold">
-                      Stage 03
-                    </span>
-                    <h3 className="font-manrope text-base font-bold text-white">
-                      Executive Founder Interview
-                    </h3>
-                    <p className="font-inter text-xs text-[#9cd1c7] mt-1 leading-relaxed">
-                      Direct board evaluation with EBS faculty and venture partners focusing on emotional stamina, sovereign alignment, ethics, and long-horizon vision.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================= */}
-      {/* 7. NEWS, EVENTS & FOUNDER INSIGHTS */}
+      {/* 6. NEWS, EVENTS & FOUNDER INSIGHTS */}
       {/* ========================================================= */}
       <section className="w-full py-24 bg-[#ebf6f2]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
@@ -1043,7 +931,7 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================= */}
-      {/* 8. ABOUT EBS & MISSION MALAPPURAM 2050 */}
+      {/* 7. ABOUT EBS & MISSION MALAPPURAM 2050 */}
       {/* ========================================================= */}
       <section className="w-full py-24 bg-[#f1fcf8]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
@@ -1150,7 +1038,7 @@ export default function HomePage() {
           <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-[#9cd1c7] font-dm-sans text-xs uppercase tracking-wider font-semibold">
             <span>Curriculum Accredited</span>
             <span>•</span>
-            <span>EPA Diagnostic Required</span>
+            <span>Cohort Selective</span>
             <span>•</span>
             <span>Limited Cohort Allocation</span>
           </div>

@@ -29,6 +29,15 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async redirects() {
+    return [
+      {
+        source: "/epa",
+        destination: "/programmes",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -217,7 +217,7 @@ export default function ContactPage() {
                       onChange={(e) => setForm({ ...form, subject: e.target.value })}
                       className="px-4 py-3 rounded-lg border border-[#c0c8c5] text-sm font-inter text-[#131d1c] bg-white focus:outline-none focus:border-[#013e37] focus:ring-2 focus:ring-[#013e37]/15"
                     >
-                      <option value="admissions">Fellowship Admissions & EPA</option>
+                      <option value="admissions">Fellowship Admissions & Application</option>
                       <option value="curriculum">Programme Curriculum Question</option>
                       <option value="partnership">3G IRPS / Mission Malappuram 2050 Partnership</option>
                       <option value="media">Media & Monograph Inquiry</option>

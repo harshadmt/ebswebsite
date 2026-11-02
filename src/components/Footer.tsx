@@ -111,9 +111,6 @@ export default function Footer() {
               Admissions & Insights
             </span>
             <nav className="flex flex-col gap-2.5 font-inter text-sm text-[#9cd1c7]">
-              <Link href="/epa" className="hover:text-white transition-colors">
-                EPA Diagnostic
-              </Link>
               <Link href="/programmes#matrix" className="hover:text-white transition-colors">
                 Curriculum Matrix
               </Link>

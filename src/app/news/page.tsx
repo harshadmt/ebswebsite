@@ -70,7 +70,7 @@ export default function NewsPage() {
       type: "Cohort Orientation",
       date: "January 15, 2026",
       location: "EBS Campus & Hybrid Labs",
-      title: "Spring 2026 Fellowship Orientation & EPA Induction",
+      title: "Spring 2026 Fellowship Orientation & Matriculation",
       desc: "Welcoming 60 selected founders across Foundation, Builder, and Launch tracks for formal cohort matriculation and syndicate onboarding.",
       image: "/assets/campus.jpg",
       cta: "View Cohort Schedule",

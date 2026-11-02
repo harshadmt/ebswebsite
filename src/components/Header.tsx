@@ -10,7 +10,6 @@ import {
   Menu, 
   X, 
   ArrowRight, 
-  Compass, 
   Layers,
   ArrowUpRight,
   Sparkles
@@ -84,7 +83,6 @@ export default function Header({ onOpenApply }: HeaderProps) {
         },
       ]
     },
-    { name: "EPA Diagnostic", href: "/epa" },
     { name: "About Us", href: "/about" },
     { name: "News & Events", href: "/news" },
     { name: "Contact", href: "/contact" },
@@ -93,7 +91,6 @@ export default function Header({ onOpenApply }: HeaderProps) {
   const getActiveNavName = (currentPath: string) => {
     if (currentPath === "/") return "Home";
     if (currentPath.startsWith("/programmes")) return "Courses";
-    if (currentPath.startsWith("/epa")) return "EPA Diagnostic";
     if (currentPath.startsWith("/about")) return "About Us";
     if (currentPath.startsWith("/news")) return "News & Events";
     if (currentPath.startsWith("/contact")) return "Contact";
@@ -374,19 +371,6 @@ export default function Header({ onOpenApply }: HeaderProps) {
 
         {/* 3. Right: Modern Action Cluster */}
         <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
-          {/* EPA Diagnostic Glass Pill */}
-          <Link
-            href="/epa"
-            onClick={() => {
-              setActiveNav("EPA Diagnostic");
-              setHoveredNav(null);
-            }}
-            className="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-dm-sans text-xs uppercase tracking-wider font-bold text-[#002622] bg-[#013e37]/[0.06] hover:bg-[#013e37]/[0.12] border border-[#013e37]/15 backdrop-blur-md shadow-2xs hover:shadow-xs transition-all hover:scale-[1.02] active:scale-[0.98] group"
-          >
-            <Compass className="w-3.5 h-3.5 text-[#013e37] group-hover:rotate-45 transition-transform duration-300" />
-            <span>Take EPA Diagnostic</span>
-          </Link>
-
           {/* Luxury Apply Now Button with Shimmer Sweep */}
           <button
             onClick={onOpenApply}
@@ -509,15 +493,6 @@ export default function Header({ onOpenApply }: HeaderProps) {
               </div>
 
               <Link
-                href="/epa"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`px-4 py-2.5 rounded-xl font-manrope font-semibold text-base transition-colors ${
-                  isActive("/epa") ? "bg-[#013e37]/10 text-[#002622] font-bold" : "text-[#404946] hover:bg-black/5"
-                }`}
-              >
-                EPA Diagnostic
-              </Link>
-              <Link
                 href="/about"
                 onClick={() => setMobileMenuOpen(false)}
                 className={`px-4 py-2.5 rounded-xl font-manrope font-semibold text-base transition-colors ${
@@ -558,14 +533,6 @@ export default function Header({ onOpenApply }: HeaderProps) {
                   <span>Apply for Next Cohort</span>
                   <ArrowRight className="w-4 h-4 text-[#ffefb3]" />
                 </button>
-                <Link
-                  href="/epa"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="w-full bg-[#013e37]/8 text-[#002622] py-2.5 rounded-full font-dm-sans font-bold text-center text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-[#013e37]/10"
-                >
-                  <Compass className="w-3.5 h-3.5 text-[#013e37]" />
-                  <span>Take EPA Diagnostic</span>
-                </Link>
               </div>
             </div>
           </motion.div>

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useModal } from "@/context/ModalContext";
 import { 
@@ -39,8 +38,8 @@ export default function ProgrammesPage() {
       outcomeTitle: "Feasibility Dossier & Go/No-Go Decision Matrix",
       outcomeDesc: "Conclusive quantitative validation proof to prevent capital waste before building.",
       audience: "Aspiring founders, high-potential university graduates, and early-career corporate executives preparing for founder autonomy.",
-      admissionMetric: "EPA 55+",
-      admissionSub: "or qualifying entrance monograph",
+      admissionMetric: "Aptitude Review",
+      admissionSub: "qualifying entrance monograph & interview",
       mentorship: "Bi-weekly Master Practicums with resident venture operators and ecosystem market analysts.",
       modules: [
         { title: "Market Opportunity Sizing", desc: "TAM/SAM/SOM bottom-up stress testing & problem validation" },
@@ -60,8 +59,8 @@ export default function ProgrammesPage() {
       outcomeTitle: "Working MVP & First Paying Customer Cohort",
       outcomeDesc: "Verified transaction volume and initial cohort retention benchmarks.",
       audience: "Builders with nascent prototypes, verified problem hypotheses, or technical specialists seeking a commercial venture partner.",
-      admissionMetric: "EPA 65+",
-      admissionSub: "plus prototype review by faculty",
+      admissionMetric: "Prototype Review",
+      admissionSub: "faculty technical & commercial review",
       mentorship: "Full access to 3G IRPS Rapid Prototyping Sandbox & Malappuram 2050 Urban Testbeds.",
       modules: [
         { title: "Customer Discovery Loops", desc: "100-interview qualitative validation framework" },
@@ -81,8 +80,8 @@ export default function ProgrammesPage() {
       outcomeTitle: "Live Revenue-Generating Entity & Governance",
       outcomeDesc: "Incorporated board structure, audited accounts, and established enterprise revenue.",
       audience: "Full-time committed venture founders with verified prototypes ready to execute customer acquisition and governance setup.",
-      admissionMetric: "EPA 72+",
-      admissionSub: "plus institutional committee interview",
+      admissionMetric: "Traction Verification",
+      admissionSub: "institutional committee interview",
       mentorship: "Direct placement into the 3G IRPS Seed Investment Syndicate and syndicate demo-day pitch room.",
       modules: [
         { title: "Go-To-Market Execution", desc: "Outbound SDR engines & self-serve acquisition funnels" },
@@ -102,8 +101,8 @@ export default function ProgrammesPage() {
       outcomeTitle: "Multi-Market Scaling Machine",
       outcomeDesc: "Cross-regional commercial footprint with institutional capital readiness and C-suite bench.",
       audience: "Post-revenue founders leading operating companies with documented product-market fit, generating >$250k annual recurring revenue.",
-      admissionMetric: "EPA 80+",
-      admissionSub: "plus financial audit & board endorsement",
+      admissionMetric: "Enterprise Audit",
+      admissionSub: "financial audit & board endorsement",
       mentorship: "Weekly 1:1 dedicated sessions with experienced unicorn founders and private equity partners.",
       modules: [
         { title: "Organizational Architecture", desc: "Building middle management and executive compensation" },
@@ -123,7 +122,7 @@ export default function ProgrammesPage() {
       outcomeTitle: "Elite Venture Portfolio & Conglomerate Stewardship",
       outcomeDesc: "Multi-venture holding company structure, cross-sector industrial leadership, and permanent legacy capital.",
       audience: "High-calibre visionary founders, corporate innovators, industrial enterprise successors, and leaders shaping national-scale industrial ecosystems.",
-      admissionMetric: "EPA 88+",
+      admissionMetric: "Fellowship Board",
       admissionSub: "Strictly capped at 12 fellows per cohort",
       mentorship: "Direct inclusion in Mission Malappuram 2050 Sovereign Development Council & Global Advisory Board.",
       modules: [
@@ -189,7 +188,7 @@ export default function ProgrammesPage() {
                 />
               </div>
               <p className="font-inter text-xs text-[#9cd1c7] pt-1 leading-relaxed">
-                Selective admission strictly gated by the Entrepreneur Potential Assessment (EPA) to safeguard high-density peer cohorts.
+                Selective admission strictly gated by institutional cohort review to safeguard high-density peer cohorts.
               </p>
               <div className="pt-2">
                 <a
@@ -514,7 +513,7 @@ export default function ProgrammesPage() {
                 <tr className="bg-[#002622] text-white">
                   <th className="p-4 font-dm-sans text-xs uppercase tracking-wider font-bold">Academic Track</th>
                   <th className="p-4 font-dm-sans text-xs uppercase tracking-wider font-bold">Duration</th>
-                  <th className="p-4 font-dm-sans text-xs uppercase tracking-wider font-bold">Min. EPA</th>
+                  <th className="p-4 font-dm-sans text-xs uppercase tracking-wider font-bold">Admission Gate</th>
                   <th className="p-4 font-dm-sans text-xs uppercase tracking-wider font-bold">Milestone Deliverable</th>
                   <th className="p-4 font-dm-sans text-xs uppercase tracking-wider font-bold">Mentorship Cadence</th>
                   <th className="p-4 font-dm-sans text-xs uppercase tracking-wider font-bold">Action</th>
@@ -524,7 +523,7 @@ export default function ProgrammesPage() {
                 <tr className="hover:bg-[#f1fcf8] transition-colors">
                   <td className="p-4 font-bold font-manrope text-sm text-[#002622]">01. Foundation</td>
                   <td className="p-4 text-[#404946]">3 Months</td>
-                  <td className="p-4 font-bold text-[#002622]">55+</td>
+                  <td className="p-4 font-bold text-[#002622]">Aptitude Review</td>
                   <td className="p-4 text-[#404946]">Validated Opportunity Dossier & Feasibility</td>
                   <td className="p-4 text-[#404946]">Bi-weekly Practicum</td>
                   <td className="p-4">
@@ -541,7 +540,7 @@ export default function ProgrammesPage() {
                 <tr className="hover:bg-[#f1fcf8] transition-colors">
                   <td className="p-4 font-bold font-manrope text-sm text-[#002622]">02. Builder</td>
                   <td className="p-4 text-[#404946]">6 Months</td>
-                  <td className="p-4 font-bold text-[#002622]">65+</td>
+                  <td className="p-4 font-bold text-[#002622]">Prototype Review</td>
                   <td className="p-4 text-[#404946]">Functional MVP & Paying Customer Accounts</td>
                   <td className="p-4 text-[#404946]">Weekly Sprint Reviews</td>
                   <td className="p-4">
@@ -558,7 +557,7 @@ export default function ProgrammesPage() {
                 <tr className="hover:bg-[#f1fcf8] transition-colors">
                   <td className="p-4 font-bold font-manrope text-sm text-[#002622]">03. Launch</td>
                   <td className="p-4 text-[#404946]">1 Year</td>
-                  <td className="p-4 font-bold text-[#002622]">72+</td>
+                  <td className="p-4 font-bold text-[#002622]">Traction Verification</td>
                   <td className="p-4 text-[#404946]">Live Entity, Audited ARR & Angel Round</td>
                   <td className="p-4 text-[#404946]">Dedicated Resident Partner</td>
                   <td className="p-4">
@@ -575,7 +574,7 @@ export default function ProgrammesPage() {
                 <tr className="hover:bg-[#f1fcf8] transition-colors">
                   <td className="p-4 font-bold font-manrope text-sm text-[#002622]">04. Scale</td>
                   <td className="p-4 text-[#404946]">2 Years</td>
-                  <td className="p-4 font-bold text-[#002622]">80+</td>
+                  <td className="p-4 font-bold text-[#002622]">Enterprise Audit</td>
                   <td className="p-4 text-[#404946]">Multi-Region Distribution & Series A/B Syndicate</td>
                   <td className="p-4 text-[#404946]">1:1 Unicorn Executive Bench</td>
                   <td className="p-4">
@@ -597,7 +596,7 @@ export default function ProgrammesPage() {
                     </span>
                   </td>
                   <td className="p-4 text-[#002622] font-semibold">3 Years</td>
-                  <td className="p-4 font-bold text-[#002622]">88+ (Capped 12)</td>
+                  <td className="p-4 font-bold text-[#002622]">Fellowship Board (Capped 12)</td>
                   <td className="p-4 text-[#002622] font-semibold">Sovereign Asset Moats & Conglomerate Holding</td>
                   <td className="p-4 text-[#002622] font-semibold">Mission 2050 Advisory Board</td>
                   <td className="p-4">
@@ -628,15 +627,16 @@ export default function ProgrammesPage() {
             Unsure which programme fits your venture stage?
           </h3>
           <p className="font-inter text-sm sm:text-base text-[#9cd1c7]">
-            Complete the empirical Entrepreneur Potential Assessment (EPA) to receive an algorithmically recommended placement docket.
+            Connect with our admissions secretariat or submit an inquiry to receive a recommended programme placement docket.
           </p>
           <div className="pt-2 flex flex-wrap gap-4 justify-center">
-            <Link
-              href="/epa"
-              className="bg-[#ffefb3] text-[#002622] font-dm-sans font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-md hover:bg-[#fff5d1] transition-all shadow-md"
+            <button
+              onClick={() => openApplyModal("placement")}
+              type="button"
+              className="bg-[#ffefb3] text-[#002622] font-dm-sans font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-md hover:bg-[#fff5d1] transition-all shadow-md cursor-pointer"
             >
-              Take EPA Assessment
-            </Link>
+              Apply for Programme Placement
+            </button>
             <button
               onClick={() => openApplyModal("counseling")}
               type="button"

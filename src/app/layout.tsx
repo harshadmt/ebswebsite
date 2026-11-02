@@ -35,7 +35,6 @@ export const metadata: Metadata = {
     "EBS",
     "Mission Malappuram 2050",
     "3G IRPS",
-    "Entrepreneur Potential Assessment",
     "Startup Accelerator",
     "Million Dollar Founder",
     "Venture Scale",

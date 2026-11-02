@@ -94,7 +94,7 @@ export default function AboutPage() {
               {
                 num: "04",
                 title: "Empirical Accountability",
-                desc: "Our admission and stage gates are governed by the rigorous Entrepreneur Potential Assessment (EPA), ensuring our cohorts are dense with relentless operators.",
+                desc: "Our admission and stage gates are governed by rigorous cohort evaluations, ensuring our cohorts are dense with relentless operators.",
               },
             ].map((tenet) => (
               <div
@@ -168,7 +168,7 @@ export default function AboutPage() {
             Ready to shape the future of enterprise?
           </h2>
           <p className="font-inter text-sm sm:text-base text-[#9cd1c7]">
-            Admission into our 2025 cohort is open for applicants who pass the EPA Diagnostic.
+            Admission into our upcoming cohort is open for qualified applicants.
           </p>
           <div className="pt-2 flex flex-wrap gap-4 justify-center">
             <button
@@ -179,10 +179,10 @@ export default function AboutPage() {
               Apply for Fellowship
             </button>
             <Link
-              href="/epa"
+              href="/programmes"
               className="bg-white/10 text-white font-dm-sans font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-md hover:bg-white/20 transition-all border border-white/15"
             >
-              Take EPA Diagnostic
+              Explore Academic Tracks
             </Link>
           </div>
         </div>
