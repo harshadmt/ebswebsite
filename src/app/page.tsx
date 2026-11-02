@@ -11,18 +11,14 @@ import {
   Sparkles, 
   CheckCircle2, 
   TrendingUp, 
-  Shield, 
   Award, 
   Rocket, 
   Users, 
   Landmark, 
-  Cpu, 
-  Briefcase, 
   Lightbulb, 
   Target, 
   Calendar, 
-  BookOpen,
-  ChevronRight
+  BookOpen
 } from "lucide-react";
 
 export default function HomePage() {
@@ -33,13 +29,6 @@ export default function HomePage() {
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, amount: 0.05 },
     transition: { duration: 0.5, ease: "easeOut" as const }
-  };
-
-  const stagger = {
-    initial: { opacity: 0 },
-    whileInView: { opacity: 1 },
-    viewport: { once: true },
-    transition: { staggerChildren: 0.12 }
   };
 
   return (
@@ -606,75 +595,187 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================= */}
-      {/* 4. WHY EBS? (THE INSTITUTIONAL DISTINCTION) */}
+      {/* 4. WHY EBS? (50 POWERFUL REASONS TO CHOOSE EBS) */}
       {/* ========================================================= */}
       <section className="w-full py-24 bg-[#f1fcf8]">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-16">
-            <motion.div {...fadeIn} className="lg:col-span-6">
-              <span className="font-dm-sans text-xs uppercase tracking-widest text-[#695e2f] font-bold block mb-2">
-                The Institutional Distinction
-              </span>
-              <h2 className="font-manrope text-3xl sm:text-4xl lg:text-5xl font-bold text-[#002622] leading-tight">
-                Built for People Who Want to Build Businesses.
+          {/* Section Header */}
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14">
+            <motion.div {...fadeIn} className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#013e37]/10 text-[#013e37] text-xs font-dm-sans uppercase font-bold tracking-wider mb-4 border border-[#013e37]/15">
+                <Sparkles className="w-3.5 h-3.5 text-[#695e2f]" />
+                Institutional Distinction • Mission Malappuram 2050
+              </div>
+              <h2 className="font-manrope text-3xl sm:text-4xl lg:text-5xl font-bold text-[#002622] leading-tight mb-4">
+                50 Powerful Reasons to Choose EBS.
               </h2>
-            </motion.div>
-            <motion.div {...fadeIn} className="lg:col-span-6">
               <p className="font-inter text-base sm:text-lg text-[#404946] leading-relaxed">
-                Traditional business academies teach administrative theory for corporate stewards. EBS is an execution institute constructed from the ground up to forge sovereign founders who take capital and build industrial reality.
+                Not just a degree, a bigger tomorrow. We build entrepreneurs for the Artificial Super Intelligence era with hands-on venture creation, ₹100 Cr syndicate access, and 100% residential immersion.
               </p>
+            </motion.div>
+
+            <motion.div {...fadeIn} className="shrink-0">
+              <Link
+                href="/why-ebs"
+                className="inline-flex items-center gap-2 bg-[#002622] text-[#ffefb3] hover:bg-[#013e37] px-6 py-3.5 rounded-md font-dm-sans text-xs uppercase tracking-wider font-bold shadow-md transition-all group"
+              >
+                <span>Explore All 50 Reasons</span>
+                <ArrowRight className="w-4 h-4 text-[#ffefb3] group-hover:translate-x-1 transition-transform" />
+              </Link>
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Quick Metrics Bar */}
+          <motion.div
+            {...fadeIn}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 p-6 bg-white rounded-2xl border border-[#013e37]/10 shadow-xs"
+          >
+            <div className="border-r border-[#013e37]/10 pr-4 last:border-r-0">
+              <span className="font-dm-sans text-xs uppercase tracking-wider text-[#695e2f] font-bold block">Funding Access</span>
+              <span className="font-manrope text-2xl lg:text-3xl font-extrabold text-[#002622]">₹100 Cr</span>
+              <span className="font-inter text-xs text-[#707976] block mt-0.5">Seed & syndicate support</span>
+            </div>
+            <div className="border-r border-[#013e37]/10 pr-4 last:border-r-0">
+              <span className="font-dm-sans text-xs uppercase tracking-wider text-[#695e2f] font-bold block">Scale Vision</span>
+              <span className="font-manrope text-2xl lg:text-3xl font-extrabold text-[#002622]">₹1,000 Cr</span>
+              <span className="font-inter text-xs text-[#707976] block mt-0.5">Enterprise scale ambition</span>
+            </div>
+            <div className="border-r border-[#013e37]/10 pr-4 last:border-r-0">
+              <span className="font-dm-sans text-xs uppercase tracking-wider text-[#695e2f] font-bold block">Research Legacy</span>
+              <span className="font-manrope text-2xl lg:text-3xl font-extrabold text-[#002622]">18 Years</span>
+              <span className="font-inter text-xs text-[#707976] block mt-0.5">3G IRPS empirical models</span>
+            </div>
+            <div>
+              <span className="font-dm-sans text-xs uppercase tracking-wider text-[#695e2f] font-bold block">Campus Model</span>
+              <span className="font-manrope text-2xl lg:text-3xl font-extrabold text-[#002622]">100%</span>
+              <span className="font-inter text-xs text-[#707976] block mt-0.5">Residential founder hub</span>
+            </div>
+          </motion.div>
+
+          {/* Curated 6 Standout Pillars from 50 Reasons */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[
               {
-                icon: Rocket,
-                title: "Founder Mindset over Theory",
-                desc: "No simulated case studies from forty years ago. Every sprint measures actual consumer conversion, revenue velocity, and margin integrity.",
+                num: "01",
+                badge: "Core Mandate",
+                title: "Build Entrepreneurs Not Job Seekers",
+                desc: "We engineer autonomous founders who create economic velocity, instead of graduates waiting for employment.",
+                category: "Venture & Capital"
               },
               {
-                icon: Users,
-                title: "Practicing Venture Mentors",
-                desc: "Learn directly under chairs who have successfully steered companies through IPOs, hyper-growth, recapitalizations, and sovereign concessions.",
+                num: "03",
+                badge: "Sovereign Alliance",
+                title: "Mission Malappuram 2050 Ecosystem",
+                desc: "Direct integration into the 30-year regional civic transformation charter, building generational enterprise density.",
+                category: "Mission 2050"
               },
               {
-                icon: Cpu,
-                title: "Dedicated Builder Ecosystem",
-                desc: "Immediate integration into proprietary legal frameworks, tech staging clusters, growth labs, and talent acquisition pipelines.",
+                num: "11",
+                badge: "Future-Proof",
+                title: "Artificial Super Intelligence Era",
+                desc: "Pedagogy and operating models purpose-built for the AI-first economy, autonomous agents, and algorithmic scale.",
+                category: "AI Pedagogy"
               },
               {
-                icon: Landmark,
-                title: "Direct Capital & Market Access",
-                desc: "Structured Demo Salons before syndicates, family offices, and Mission 2050 sovereign infrastructure allocation funds.",
+                num: "13",
+                badge: "Capital Syndicate",
+                title: "₹100 Cr Funding & Angel Support",
+                desc: "Direct institutional pitch pipelines to high-net-worth angel syndicates, diaspora family offices, and venture funds.",
+                category: "Capital Access"
               },
-            ].map((item, index) => {
-              const IconComponent = item.icon;
-              return (
-                <motion.div
-                  key={item.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -6 }}
-                  className="bg-white p-7 rounded-xl shadow-xs hover:shadow-xl transition-all border border-[#013e37]/10 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="w-12 h-12 rounded-lg bg-[#ebf6f2] flex items-center justify-center text-[#013e37] mb-5">
-                      <IconComponent className="w-6 h-6" />
-                    </div>
-                    <h3 className="font-manrope text-lg font-bold text-[#002622] mb-2.5">
-                      {item.title}
-                    </h3>
-                    <p className="font-inter text-xs text-[#404946] leading-relaxed">
-                      {item.desc}
-                    </p>
+              {
+                num: "14",
+                badge: "Immersive",
+                title: "100% Residential Campus",
+                desc: "Round-the-clock venture creation, collaborative hacker spaces, peer accountability, and residential founder quarters.",
+                category: "Incubator Hub"
+              },
+              {
+                num: "15",
+                badge: "Scale Ambition",
+                title: "Build ₹1,000 Cr Business Ambition",
+                desc: "We instill the strategic governance, unit economics, and capital recycling frameworks to build multi-crore enterprises.",
+                category: "Scale Strategy"
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={item.num}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                whileHover={{ y: -6 }}
+                className="bg-white p-7 rounded-2xl shadow-xs hover:shadow-xl transition-all border border-[#013e37]/10 flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono text-xs font-bold text-[#695e2f] bg-[#695e2f]/10 px-2.5 py-1 rounded-md">
+                      REASON #{item.num}
+                    </span>
+                    <span className="font-dm-sans text-[11px] font-bold uppercase tracking-wider text-[#013e37] bg-[#ebf6f2] px-2.5 py-1 rounded-full">
+                      {item.badge}
+                    </span>
                   </div>
-                </motion.div>
-              );
-            })}
+
+                  <h3 className="font-manrope text-lg font-bold text-[#002622] group-hover:text-[#013e37] transition-colors mb-2.5 leading-snug">
+                    {item.title}
+                  </h3>
+
+                  <p className="font-inter text-xs text-[#404946] leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+
+                <div className="pt-5 mt-5 border-t border-[#013e37]/10 flex items-center justify-between">
+                  <span className="font-dm-sans text-[11px] uppercase tracking-wider text-[#707976] font-semibold">
+                    {item.category}
+                  </span>
+                  <Link
+                    href={`/why-ebs?q=${encodeURIComponent(item.title)}`}
+                    className="inline-flex items-center gap-1 text-xs font-dm-sans font-bold text-[#002622] hover:text-[#695e2f] transition-colors"
+                  >
+                    <span>Inspect</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
           </div>
+
+          {/* Institutional Creed & Full Directory Banner */}
+          <motion.div
+            {...fadeIn}
+            className="p-8 sm:p-10 rounded-2xl bg-gradient-to-r from-[#002622] via-[#013e37] to-[#002622] text-white shadow-xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8 border border-white/10"
+          >
+            <div className="relative z-10 max-w-2xl">
+              <span className="font-dm-sans text-xs uppercase tracking-[0.25em] text-[#ffefb3] font-bold block mb-2">
+                Official EBS Institutional Creed
+              </span>
+              <p className="font-manrope text-xl sm:text-2xl font-bold text-white italic leading-snug mb-3">
+                “Ideas create people. People create businesses. Businesses create a brighter Malappuram.”
+              </p>
+              <p className="font-inter text-xs text-[#9cd1c7] leading-relaxed">
+                Explore all 50 reasons categorized across Venture & Capital, AI Era Curriculum, Merit Scholarships, Unicorn Mentorship, and Campus Life.
+              </p>
+            </div>
+
+            <div className="relative z-10 flex flex-wrap items-center gap-3 shrink-0">
+              <Link
+                href="/why-ebs"
+                className="bg-[#ffefb3] text-[#002622] hover:bg-white px-6 py-3.5 rounded-md font-dm-sans text-xs uppercase tracking-wider font-extrabold shadow-md transition-all inline-flex items-center gap-2 cursor-pointer"
+              >
+                <span>Read Full 50 Reasons</span>
+                <ArrowRight className="w-4 h-4 text-[#002622]" />
+              </Link>
+              <button
+                onClick={() => openApplyModal("50-reasons-banner")}
+                type="button"
+                className="bg-white/10 hover:bg-white/20 text-white px-5 py-3.5 rounded-md font-dm-sans text-xs uppercase tracking-wider font-semibold border border-white/20 transition-all cursor-pointer"
+              >
+                Apply for Admission
+              </button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -984,7 +1085,7 @@ export default function HomePage() {
                     Civic Blueprint 2050
                   </span>
                   <p className="font-inter text-xs text-[#404946] italic">
-                    “We don't build temporary businesses; we construct sustainable economic engines that will thrive over the next fifty years.”
+                    “We don&apos;t build temporary businesses; we construct sustainable economic engines that will thrive over the next fifty years.”
                   </p>
                 </div>
               </div>

@@ -83,6 +83,7 @@ export default function Header({ onOpenApply }: HeaderProps) {
         },
       ]
     },
+    { name: "Why EBS", href: "/why-ebs" },
     { name: "About Us", href: "/about" },
     { name: "News & Events", href: "/news" },
     { name: "Contact", href: "/contact" },
@@ -91,6 +92,7 @@ export default function Header({ onOpenApply }: HeaderProps) {
   const getActiveNavName = (currentPath: string) => {
     if (currentPath === "/") return "Home";
     if (currentPath.startsWith("/programmes")) return "Courses";
+    if (currentPath.startsWith("/why-ebs")) return "Why EBS";
     if (currentPath.startsWith("/about")) return "About Us";
     if (currentPath.startsWith("/news")) return "News & Events";
     if (currentPath.startsWith("/contact")) return "Contact";
@@ -98,10 +100,12 @@ export default function Header({ onOpenApply }: HeaderProps) {
   };
 
   const [activeNav, setActiveNav] = useState<string>(() => getActiveNavName(pathname));
+  const [prevPathname, setPrevPathname] = useState(pathname);
 
-  useEffect(() => {
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setActiveNav(getActiveNavName(pathname));
-  }, [pathname]);
+  }
 
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
@@ -491,6 +495,16 @@ export default function Header({ onOpenApply }: HeaderProps) {
                   </Link>
                 </div>
               </div>
+
+              <Link
+                href="/why-ebs"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`px-4 py-2.5 rounded-xl font-manrope font-semibold text-base transition-colors ${
+                  isActive("/why-ebs") ? "bg-[#013e37]/10 text-[#002622] font-bold" : "text-[#404946] hover:bg-black/5"
+                }`}
+              >
+                Why EBS (50 Reasons)
+              </Link>
 
               <Link
                 href="/about"
